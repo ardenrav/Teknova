@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo Teknova">
+  <defs>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff9a16"/>
+      <stop offset="1" stop-color="#ff6410"/>
+    </linearGradient>
+    <linearGradient id="left" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f04408"/>
+      <stop offset="1" stop-color="#ff6510"/>
+    </linearGradient>
+    <linearGradient id="right" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff6810"/>
+      <stop offset="1" stop-color="#ff9214"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 2 59 18v28L32 62 5 46V18Z" fill="url(#top)"/>
+  <path d="M5 18 32 34v28L5 46Z" fill="url(#left)"/>
+  <path d="m59 18-27 16v28l27-16Z" fill="url(#right)"/>
+  <path d="M19 20h26c2.2 0 4 1.8 4 4s-1.8 4-4 4H36v17c0 2.2-1.8 4-4 4s-4-1.8-4-4V28H19c-2.2 0-4-1.8-4-4s1.8-4 4-4Z" fill="#fff"/>
+</svg>
