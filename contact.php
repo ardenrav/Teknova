@@ -2,7 +2,7 @@
 $to = 'contact@teknova-sarl.com';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: TeknovaSarl.html');
+    header('Location: index.html');
     exit;
 }
 
@@ -106,7 +106,7 @@ if (!empty($errors)) {
       <ul>
         ' . implode('', array_map(function ($error) { return '<li>' . htmlspecialchars($error, ENT_QUOTES, 'UTF-8') . '</li>'; }, $errors)) . '
       </ul>
-      <p><a class="button" href="TeknovaSarl.html#contact">Retour au formulaire</a></p>
+      <p><a class="button" href="index.html#contact">Retour au formulaire</a></p>
     ';
     renderPage('Erreur - formulaire Teknova', $messageContent);
     exit;
@@ -130,14 +130,14 @@ if ($sent) {
     $messageContent = '
       <h1>Merci !</h1>
       <p>Votre demande a bien été reçue. Nous reviendrons vers vous rapidement pour vous proposer une réponse adaptée à votre projet.</p>
-      <p><a class="button" href="TeknovaSarl.html#contact">Retour au site</a></p>
+      <p><a class="button" href="index.html#contact">Retour au site</a></p>
     ';
     renderPage('Demande envoyée - Teknova', $messageContent);
 } else {
     $messageContent = '
       <h1>Le message n’a pas pu être envoyé</h1>
       <p>Il y a eu un problème temporaire lors de l’envoi de votre demande. Merci de réessayer plus tard ou de nous écrire directement à contact@teknova-sarl.com.</p>
-      <p><a class="button" href="TeknovaSarl.html#contact">Réessayer</a></p>
+      <p><a class="button" href="index.html#contact">Réessayer</a></p>
     ';
     renderPage('Erreur d’envoi - Teknova', $messageContent);
 }
