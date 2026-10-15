@@ -40,7 +40,7 @@ button{font:inherit;color:inherit}
 ul{margin:0;padding:0;list-style:none}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 .wrap{width:min(1180px,100% - 32px);margin-inline:auto}
-.eyebrow{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c,var(--accent));display:inline-flex;align-items:center;gap:.6rem}
+.eyebrow{font-family:var(--font-mono);font-size:.9rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c,var(--accent));display:inline-flex;align-items:center;gap:.6rem}
 .eyebrow::before{content:"";width:28px;height:2px;background:var(--c,var(--accent));border-radius:2px}
 .grad{background:linear-gradient(95deg,var(--blue),var(--amber) 52%,var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
 .tint{background:color-mix(in srgb,var(--c) 11%,#fff)}
@@ -132,7 +132,7 @@ section.sec{padding-block:clamp(60px,8vw,104px)}
 /* En-tête des pages internes */
 .phead{position:relative;overflow:hidden;padding-block:clamp(40px,6vw,76px) clamp(40px,5vw,64px);background:linear-gradient(180deg,color-mix(in srgb,var(--c,var(--blue)) 9%,#fff),var(--bg))}
 .phead .blob{opacity:.35}
-.phead h1{font-size:clamp(2rem,4.6vw,3.5rem);font-weight:800;margin-block:16px 18px;position:relative}
+.phead h1{font-size:clamp(1.7rem,3.6vw,2.8rem);font-weight:800;margin-block:16px 18px;position:relative}
 .phead p.lead{font-size:clamp(1.02rem,1.4vw,1.16rem);color:var(--muted);max-width:62ch;position:relative}
 .phead .eyebrow,.phead .cta-row{position:relative}
 .phead-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center;position:relative}
@@ -195,27 +195,57 @@ section.sec{padding-block:clamp(60px,8vw,104px)}
 .feat i::after{content:"";width:12px;height:12px;border-radius:4px;background:var(--c);transform:rotate(45deg)}
 .feat h3{font-size:1.06rem}
 .feat p{color:var(--muted);font-size:.93rem}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:30px;display:grid;gap:16px;align-content:start}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:100%}
+.two-panel-bg{background-color:#c76d57;background-image:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.12)),url('image/entreprise.png');background-size:cover;background-position:center center;background-repeat:no-repeat;padding:18px;border:1px solid rgba(15,23,42,.06);box-shadow:0 24px 40px -28px rgba(15,23,42,.18);min-height:420px;display:block;overflow:hidden;width:100%;max-width:100%}
+.two-panel-bg .two{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.panel{background:rgba(255,255,255,.72);backdrop-filter:blur(1px);border:1px solid rgba(15,23,42,.08);border-radius:22px;padding:30px;display:grid;gap:16px;align-content:start}
 .panel h3{font-size:1.2rem}
 .checks{display:grid;gap:12px}
 .chips{display:flex;flex-wrap:wrap;gap:10px}
 .chips span{font-family:var(--font-mono);font-size:.84rem;padding:9px 15px;border-radius:12px;background:var(--surface);border:1px solid var(--line);transition:transform .3s var(--ease),border-color .3s,color .3s}
 .chips span:hover{transform:translateY(-4px);border-color:var(--c,var(--accent));color:var(--c,var(--accent))}
-.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;position:relative}
+.tech-wrap{display:grid;gap:28px;align-items:start;padding-top:8px}
+.tech-wrap .eyebrow{font-size:.82rem;letter-spacing:.18em}
+.tech-wrap .tech-head{display:grid;gap:18px}
+.tech-wrap .tech-head h2{margin:0;max-width:760px;font-size:clamp(2.8rem,5vw,6rem);line-height:.9;letter-spacing:-.06em;font-weight:800}
+.tech-wrap .chips{gap:18px;margin-top:8px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:980px}
+.tech-wrap .chips span{font-size:clamp(1.05rem,1.8vw,2rem);padding:18px 24px;border-radius:18px;border:1px solid rgba(15,23,42,.14);background:rgba(255,255,255,.28);font-family:var(--font-body);font-weight:500;box-shadow:0 1px 0 rgba(15,23,42,.02);text-align:center;display:flex;align-items:center;justify-content:center;min-height:80px}
+.tcard .tech-line{margin:0;color:var(--fg);font-size:.92rem;line-height:1.7}
+.tcard .tech-line strong{color:var(--c,var(--accent))}
+.tech-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.tech-group{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:grid;gap:8px}
+.tech-group h3{font-size:1rem;margin:0;color:var(--fg)}
+.tech-group p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.7}
+.tech-group p strong{color:var(--c,var(--accent))}
+.steps{display:flex;align-items:flex-start;gap:18px;position:relative;overflow-x:auto;padding:8px 4px 12px}
 .steps::before{content:"";position:absolute;left:6%;right:6%;top:22px;height:2px;background:linear-gradient(90deg,var(--c,var(--blue)),transparent);opacity:.35}
-.step{display:grid;gap:10px;align-content:start;position:relative}
-.dot{width:46px;height:46px;border-radius:50%;background:var(--surface);border:2px solid var(--c,var(--blue));display:grid;place-items:center;font-family:var(--font-mono);font-weight:500;color:var(--c,var(--blue));position:relative;z-index:1}
-.step h3{font-size:1.06rem}
-.step p{color:var(--muted);font-size:.92rem}
-details.faq{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:0 22px;transition:border-color .3s}
+.step{display:grid;gap:10px;align-content:start;position:relative;flex:1 1 0;min-width:180px;transition:transform .3s var(--ease);padding:6px 0 0}
+.step:nth-child(even){margin-top:20px}
+.step:nth-child(odd){margin-top:0}
+.dot{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--c,var(--blue)),color-mix(in srgb,var(--c,var(--blue)) 55%,#fff));border:2px solid rgba(255,255,255,.8);box-shadow:0 10px 18px -12px var(--c,var(--blue));display:grid;place-items:center;font-family:var(--font-mono);font-weight:700;color:#fff;position:relative;z-index:1}
+.step h3{font-size:1.06rem;color:var(--fg);font-weight:700}
+.step p{color:var(--muted);font-size:.92rem;line-height:1.6}
+.step p strong{color:var(--c,var(--accent));font-weight:700}
+details.faq{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 18px;transition:border-color .3s}
 details.faq[open]{border-color:var(--c,var(--accent))}
-details.faq summary{cursor:pointer;list-style:none;font-family:var(--font-display);font-weight:600;padding:18px 0;display:flex;justify-content:space-between;gap:16px;align-items:center}
+details.faq summary{cursor:pointer;list-style:none;font-family:var(--font-display);font-weight:600;font-size:.98rem;padding:14px 0;display:flex;justify-content:space-between;gap:16px;align-items:center}
 details.faq summary::-webkit-details-marker{display:none}
 details.faq summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--c,var(--accent));transition:transform .3s var(--ease);flex:none}
 details.faq[open] summary::after{transform:rotate(45deg)}
 details.faq p{color:var(--muted);padding-bottom:20px}
 .faqs{display:grid;gap:12px;max-width:860px}
+.faqs.faq-grid{display:flex;flex-wrap:wrap;gap:18px;max-width:100%;align-items:flex-start}
+.faq-card{background:rgba(255,255,255,.18);border:1px solid rgba(20,24,35,.14);border-radius:10px;padding:0;box-shadow:0 10px 18px -18px rgba(27,33,41,.4);overflow:hidden;min-height:64px;width:calc(50% - 9px)}
+.faq-item.faq-card{display:block}
+.faq-question{width:100%;background:transparent;border:0;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;gap:14px;cursor:pointer;text-align:left;font:inherit}
+.faq-question span:first-child{flex:1;font-family:var(--font-display);font-weight:700;font-size:clamp(.94rem,1.2vw,1.1rem);line-height:1.3;color:#1d1d1d}
+.faq-question:focus-visible{outline:2px solid rgba(196,135,64,.7);outline-offset:-2px}
+.faq-icon{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;color:#2a6fe6;font-size:1.3rem;line-height:1;font-weight:300;flex:none;transition:transform .25s ease}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease,opacity .2s ease, padding .2s ease;opacity:0;padding:0 24px}
+.faq-item.open .faq-answer{max-height:500px;opacity:1;padding:0 24px 22px}
+.faq-answer p{margin:0;color:#374151;font-size:1rem;line-height:1.7}
+.faq-answer p strong{color:#1d1d1d}
 .ctaband{--c:var(--blue);border-radius:28px;padding:clamp(30px,5vw,56px);color:#fff;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;background:linear-gradient(115deg,var(--c),color-mix(in srgb,var(--c) 55%,#4F46E5));position:relative;overflow:hidden;box-shadow:0 40px 70px -40px var(--c)}
 .ctaband::after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;right:-90px;top:-120px;background:rgba(255,255,255,.14);pointer-events:none}
 .ctaband h2{font-size:clamp(1.6rem,3vw,2.3rem);position:relative}
@@ -334,11 +364,17 @@ footer a:hover{color:#fff}
 footer .brand{color:#fff;margin-bottom:14px}
 footer .brand small{background:transparent;color:#9FB1D6;border-color:#2A3E69}
 footer p{font-size:.92rem;line-height:1.7;max-width:34ch}
+.socials{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.socials a{width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(201,213,238,.22);border-radius:12px;background:rgba(255,255,255,.05);color:#C9D5EE;transition:transform .3s var(--ease),background .3s,border-color .3s,color .3s}
+.socials a:hover{transform:translateY(-4px);background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 12px 22px -14px var(--accent)}
+.socials svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.socials .fill-icon{fill:currentColor;stroke:none}
 .fbot{margin-top:40px;padding-top:22px;border-top:1px solid #1E3258;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.85rem;color:#8FA2C9}
 
 /* Illustrations des services */
 .art{position:relative;aspect-ratio:400/260;overflow:hidden;background:linear-gradient(145deg,color-mix(in srgb,var(--c) 18%,#fff),color-mix(in srgb,var(--c) 6%,#fff));border-bottom:1px solid var(--line)}
 .art svg{display:block;width:100%;height:100%;transition:transform .9s var(--ease)}
+.art img{display:block;width:100%;height:100%;object-fit:cover}
 .art .a{fill:var(--c)}.art .a2{fill:color-mix(in srgb,var(--c) 38%,#fff)}.art .a3{fill:color-mix(in srgb,var(--c) 15%,#fff)}
 .art .as{fill:none;stroke:var(--c);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 .art .ws{fill:none;stroke:#fff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
@@ -352,12 +388,67 @@ footer p{font-size:.92rem;line-height:1.7;max-width:34ch}
 .art .dotb{animation:blink 1.2s infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .art.big{border:1px solid color-mix(in srgb,var(--c) 28%,#fff);border-radius:26px;box-shadow:var(--shadow);max-width:600px;width:100%;justify-self:end}
+.art.big.person-art{background:transparent;border:0;box-shadow:none}
+.phead-grid:has(.person-art){grid-template-columns:minmax(0,1fr) minmax(320px,1.15fr);align-items:center}
+.art.big.person-art{width:100%;max-width:min(860px,100%);height:clamp(360px,40vw,560px);min-height:0;aspect-ratio:auto;overflow:hidden}
+.art.big.person-art::before{content:"";position:absolute;inset:14px;border:1px solid color-mix(in srgb,var(--c,var(--blue)) 38%,#fff);border-radius:32px;background:linear-gradient(145deg,color-mix(in srgb,var(--c,var(--blue)) 10%,transparent),transparent 58%);box-shadow:0 24px 50px -28px color-mix(in srgb,var(--c,var(--blue)) 65%,transparent);z-index:0;pointer-events:none}
+.art.big.person-art::after{content:"";position:absolute;width:150px;height:150px;right:-22px;top:-18px;border-radius:50%;background:color-mix(in srgb,var(--c,var(--blue)) 18%,transparent);filter:blur(2px);z-index:0;pointer-events:none}
+.art.big.person-art .person-orbit{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:visible}
+.person-orbit .orbit{position:absolute;left:50%;top:50%;width:78%;height:78%;border:1px solid color-mix(in srgb,var(--c,var(--blue)) 42%,#fff);border-radius:50%;transform:translate(-50%,-50%) rotate(-18deg);opacity:.75}
+.person-orbit .orbit-b{width:92%;height:60%;transform:translate(-50%,-50%) rotate(22deg);opacity:.38}
+.person-orbit .orbit::after{content:"";position:absolute;top:8%;left:16%;width:9px;height:9px;border-radius:50%;background:var(--c,var(--blue));box-shadow:0 0 0 6px color-mix(in srgb,var(--c,var(--blue)) 14%,transparent);animation:personOrbit 7s linear infinite}
+.person-orbit .orbit-b::after{top:auto;left:auto;right:12%;bottom:15%;width:7px;height:7px;background:#F59E0B;animation-duration:9s;animation-direction:reverse}
+.icon-bubble{position:absolute;width:58px;height:58px;border-radius:20px;display:grid;place-items:center;color:var(--c,var(--blue));background:rgba(255,255,255,.94);border:1px solid color-mix(in srgb,var(--c,var(--blue)) 20%,#fff);box-shadow:0 18px 34px -18px rgba(14,27,61,.42);animation:personFloat 4.8s ease-in-out infinite;z-index:0}
+.icon-bubble svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.icon-bubble.bubble-a{left:3%;top:10%;animation-delay:-1s}
+.icon-bubble.bubble-b{right:2%;top:17%;color:#7C3AED;animation-delay:-2.2s}
+.icon-bubble.bubble-c{display:none}
+.icon-bubble.bubble-d{right:4%;bottom:3%;color:#F59E0B;animation-delay:-.5s}
+.icon-bubble.bubble-e{left:55%;right:auto;top:12%;width:72px;height:72px;border-radius:50%;color:#fff;background:linear-gradient(135deg,#D97757,#C76846);border:0;font-family:var(--font-display);font-size:.78rem;font-weight:800;letter-spacing:-.04em;animation-delay:-1.8s}
+.ux-label{display:block;white-space:nowrap}
+.art.big.person-art img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center;filter:drop-shadow(0 22px 24px rgba(14,27,61,.2))}
+/* Positionnement dédié du hero Site vitrine : les icônes restent visibles autour de l'image. */
+.page[data-route="s-vitrine"] .icon-bubble{z-index:2}
+.page[data-route="s-vitrine"] .icon-bubble.bubble-a{left:1.5%;top:8%;}
+.page[data-route="s-vitrine"] .icon-bubble.bubble-b{right:.5%;top:10%;}
+.page[data-route="s-vitrine"] .icon-bubble.bubble-d{right:1.5%;bottom:4%;}
+.page[data-route="s-vitrine"] .icon-bubble.bubble-e{left:50%;top:1%;}
+.page[data-route="s-vitrine"] .art.big.person-art img{width:92%;height:92%;margin:auto;}
+.page[data-route="s-erp"] .art.big.person-art img{width:92%;height:92%;margin:auto;}
+/* Placement des éléments flottants pour le visuel Web application. */
+.page[data-route="s-logiciel"] .icon-bubble{z-index:2}
+.page[data-route="s-logiciel"] .icon-bubble.bubble-a{left:1.5%;top:8%;}
+.page[data-route="s-logiciel"] .icon-bubble.bubble-b{right:.5%;top:10%;}
+.page[data-route="s-logiciel"] .icon-bubble.bubble-d{right:1.5%;bottom:4%;}
+.page[data-route="s-logiciel"] .icon-bubble.bubble-e{left:7%;top:62%;}
+@keyframes personFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes personOrbit{to{transform:rotate(360deg)}}
 .card:hover .art svg,.ocard:hover .art svg{transform:scale(1.06)}
 .card .cbody{padding:24px 26px 26px;display:flex;flex-direction:column;gap:14px;flex:1;position:relative}
 .ocard .cbody{padding:26px 28px 28px;display:grid;gap:14px;align-content:start;position:relative}
+.track{grid-auto-rows:minmax(288px,1fr)}
+.track .card{min-height:288px;border:0;border-radius:28px;background:linear-gradient(135deg,color-mix(in srgb,var(--c) 82%,#fff),color-mix(in srgb,var(--c) 38%,#fff));box-shadow:0 22px 42px -28px color-mix(in srgb,var(--c) 65%,#172554);transform-style:preserve-3d;perspective:900px;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.track .card:nth-child(3),.track .card:nth-child(4),.track .card:nth-child(5){grid-column:span 2}
+.track .card:hover{transform:translateY(-8px) scale(1.015) rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg));border-color:transparent;box-shadow:0 32px 54px -28px var(--c)}
+.track .card .art{display:block;position:absolute;inset:0;border:0;background:transparent;z-index:0;opacity:.58;pointer-events:none;transition:transform .8s var(--ease),opacity .5s ease}
+.track .card .art::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(8,20,55,.12) 72%);pointer-events:none}
+.track .card .art img,.track .card .art svg{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.08);transform:scale(1.04);transition:transform .8s var(--ease)}
+.track .card:hover .art{opacity:.7;transform:scale(1.02)}
+.track .card:hover .art img,.track .card:hover .art svg{transform:scale(1.1)}
+.track .card .cbody{padding:30px 28px 26px;justify-content:flex-end;gap:16px;color:#fff;z-index:1;background:linear-gradient(180deg,rgba(8,20,55,0) 18%,rgba(8,20,55,.68) 100%);text-shadow:0 2px 12px rgba(8,20,55,.48)}
+.track .card h3{max-width:14ch;font-size:clamp(1.25rem,2vw,1.7rem);line-height:1.05;font-weight:800;letter-spacing:-.04em;color:#fff;text-shadow:0 3px 14px rgba(8,20,55,.62)}
+.track .card p,.track .card .tags{display:none}
+.track .card .more{width:max-content;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.55);font-size:.72rem;line-height:1.2;letter-spacing:.02em;text-transform:uppercase;color:#fff;text-shadow:0 2px 8px rgba(8,20,55,.62)}
+.track .card .more svg{stroke:#fff}
 .ocard::after{display:none}
-@media (max-width:620px){.card .cbody{padding:20px 20px 22px}.ocard .cbody{padding:22px 20px 24px}.rv [data-reveal="left"]{--tx:-36px}.rv [data-reveal="right"]{--tx:36px}.art.big{justify-self:stretch}}
+@media (max-width:620px){.card .cbody{padding:20px 20px 22px}.ocard .cbody{padding:22px 20px 24px}.rv [data-reveal="left"]{--tx:-36px}.rv [data-reveal="right"]{--tx:36px}.art.big{justify-self:stretch}.icon-bubble{transform:scale(.92)}.icon-bubble.bubble-a{left:1%;top:8%}.icon-bubble.bubble-b{right:1%;top:14%}.icon-bubble.bubble-d{right:3%;bottom:2%}.icon-bubble.bubble-e{left:50%;top:9%;width:62px;height:62px}}
+@media (max-width:620px){.page[data-route="s-vitrine"] .icon-bubble.bubble-a{left:0;top:6%}.page[data-route="s-vitrine"] .icon-bubble.bubble-b{right:0;top:8%}.page[data-route="s-vitrine"] .icon-bubble.bubble-d{right:1%;bottom:1%}.page[data-route="s-vitrine"] .icon-bubble.bubble-e{left:48%;top:0}}
+@media (max-width:620px){.page[data-route="s-vitrine"] .art.big.person-art img{width:92%;height:92%;}}
+@media (max-width:620px){.page[data-route="s-erp"] .art.big.person-art img{width:92%;height:92%;}}
+@media (max-width:620px){.page[data-route="s-logiciel"] .icon-bubble.bubble-a{left:0;top:6%}.page[data-route="s-logiciel"] .icon-bubble.bubble-b{right:0;top:8%}.page[data-route="s-logiciel"] .icon-bubble.bubble-d{right:1%;bottom:1%}.page[data-route="s-logiciel"] .icon-bubble.bubble-e{left:3%;top:58%;width:62px;height:62px}}
 @media (max-width:1020px){.art.big{justify-self:center}}
+@media (max-width:1020px){.phead-grid:has(.person-art){grid-template-columns:1fr}.art.big.person-art{width:min(100%,760px);height:clamp(360px,60vw,520px);justify-self:center}}
+@media (max-width:1020px){.track .card:nth-child(3),.track .card:nth-child(4),.track .card:nth-child(5){grid-column:auto}}
 
 /* Bandeau défilant gauche / droite */
 .marq{background:var(--surface);border-block:1px solid var(--line);padding:22px 0;overflow:hidden}
@@ -421,7 +512,17 @@ input,select,textarea{font-size:16px}
   html{scroll-padding-top:76px}
   section.sec{padding-block:52px}
   .hero{padding-block:36px 52px}
-  .row2,.fgrid,.tgrid,.paths,.next3,.steps,.fgrid4,.why4{grid-template-columns:1fr}
+  .row2,.fgrid,.tgrid,.paths,.next3,.fgrid4,.why4{grid-template-columns:1fr}
+  .two-panel-bg .two{grid-template-columns:1fr;gap:16px}
+  .panel{padding:22px 18px}
+  section.sec:has(.steps){background:#fff}
+  .steps{display:grid;grid-template-columns:1fr;gap:34px;overflow:visible;padding:8px 0 8px;margin-top:12px;position:relative}
+  .steps::before{content:"";position:absolute;left:25px;top:25px;bottom:25px;width:3px;background:linear-gradient(180deg,var(--c,var(--blue)),color-mix(in srgb,var(--c,var(--blue)) 55%,#fff));opacity:1;z-index:0}
+  .step{display:grid;grid-template-columns:50px minmax(0,1fr);gap:24px;align-items:start;min-width:0;padding:0;position:relative;z-index:1;background:transparent;border:0;border-radius:0;box-shadow:none}
+  .step:nth-child(even),.step:nth-child(odd){margin-top:0}
+  .step h3{font-size:clamp(1rem,4.8vw,1.35rem);line-height:1.3;margin:0;color:#1f2433;font-weight:800;letter-spacing:-.025em}
+  .step p{display:block;grid-column:2;margin-top:8px;color:var(--muted);font-size:.9rem;line-height:1.55}
+  .dot{width:50px;height:50px;border:0;box-shadow:none;border-radius:12px;background:linear-gradient(135deg,var(--c,var(--blue)),color-mix(in srgb,var(--c,var(--blue)) 55%,#fff));font-size:1rem;font-weight:800;position:relative;z-index:1;color:#fff;transform:none}
   .dd{grid-template-columns:1fr}
   .sec-head{margin-bottom:30px;gap:12px}
   .sec-head h2{font-size:1.65rem}
@@ -429,7 +530,7 @@ input,select,textarea{font-size:16px}
   .hero h1{font-size:2.1rem}
   .hero p.lead,.phead p.lead{font-size:1rem}
   .phead{padding-block:28px 36px}
-  .phead h1{font-size:1.9rem}
+  .phead h1{font-size:1.75rem}
   .cta-row{margin-top:26px}
   .cta-row .btn{flex:1 1 100%}
   .pills{margin-top:24px;gap:6px}
@@ -444,6 +545,12 @@ input,select,textarea{font-size:16px}
   .svc-top{margin-bottom:22px}
   .track{grid-template-columns:1fr;gap:14px;padding-inline:0}
   .card{flex:none;width:100%}
+  .faqs.faq-grid{display:flex;flex-direction:column;gap:14px;max-width:100%}
+  .faq-card{width:100%;min-height:60px}
+  .faq-question{padding:12px 14px}
+  .faq-question span:first-child{font-size:.9rem}
+  .faq-answer{padding:0 20px}
+  .faq-item.open .faq-answer{padding:0 20px 18px}
   .tbox{padding:22px 18px;border-radius:18px}
   .tbox h3{font-size:1.15rem}
   .tstep{grid-template-columns:40px minmax(0,1fr);gap:12px}
@@ -457,8 +564,8 @@ input,select,textarea{font-size:16px}
   .pn a{width:100%}
   form{padding:22px 18px;border-radius:20px}
   .btn{padding:.95rem 1.2rem;min-height:48px}
-  details.faq{padding:0 16px}
-  details.faq summary{padding:16px 0;font-size:.97rem}
+  details.faq{padding:0 14px}
+  details.faq summary{padding:13px 0;font-size:.9rem}
   footer{padding-block:44px 24px}
   .fbot{flex-direction:column}
   .bigico{width:58px;height:58px;border-radius:17px}
@@ -468,7 +575,7 @@ input,select,textarea{font-size:16px}
   .brand{font-size:1.05rem}
   .brand small{display:none}
   .hero h1{font-size:1.85rem}
-  .phead h1{font-size:1.65rem}
+  .phead h1{font-size:1.6rem}
   .sec-head h2{font-size:1.45rem}
   .chip.c4{display:none}
   .phone{width:100px}
@@ -506,7 +613,6 @@ input,select,textarea{font-size:16px}
     <nav class="main" id="nav" aria-label="Navigation principale">
       <a href="#accueil" data-nav="accueil">Accueil</a>
       <div class="has-dd"><a href="#services" data-nav="services">Services</a><div class="dd" id="dd"></div></div>
-      <a href="#innovation" data-nav="innovation">Innovation</a>
       <a href="#methode" data-nav="methode">Méthode</a>
       <a href="#technologies" data-nav="technologies">Technologies</a>
       <a href="#contact" data-nav="contact">Contact</a>
@@ -540,10 +646,10 @@ input,select,textarea{font-size:16px}
         <div class="win">
           <img src="./image/crm.jpg" alt="Aperçu CRM Teknova" />
         </div>
-        <div class="chip c1" style="--c:#D97757"><b></b>Web</div>
+        <div class="chip c1" style="--c:#D97757"><b></b>Web application</div>
         <div class="chip c2" style="--c:#059669"><b></b>Mobile</div>
         <div class="chip c3" style="--c:#E11D48"><b></b>ERP &amp; CRM</div>
-        <div class="chip c4" style="--c:#0D9488"><b></b>IA</div>
+        <div class="chip c4" style="--c:#0D9488"><b></b>Site vitrine</div>
       </div>
     </div>
   </div>
@@ -628,7 +734,7 @@ input,select,textarea{font-size:16px}
 <div id="svc-pages"></div>
 
 <!-- INNOVATION -->
-<div class="page" data-route="innovation" hidden>
+<div class="page" data-route="innovation-disabled" hidden>
   <div class="phead">
     <div class="blob b1" style="left:-140px;top:-160px"></div><div class="blob b3" style="right:5%;top:-120px;bottom:auto"></div>
     <div class="wrap">
@@ -768,8 +874,8 @@ input,select,textarea{font-size:16px}
     <div class="wrap contact">
       <div>
         <div class="info" data-reveal>
-          <div><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span id="mail">contact@teknova.mg</span></div>
-          <div><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span id="tel">+261 00 00 000 00</span></div>
+          <div><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span id="mail">contact@teknova-sarl.com</span></div>
+          <div><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span id="tel">+261 380 507 590</span></div>
         </div>
         <div class="sec-head" style="margin:36px 0 0" data-reveal><span class="eyebrow">Après votre message</span></div>
         <div class="tl" style="margin-top:20px;gap:16px">
@@ -783,8 +889,9 @@ input,select,textarea{font-size:16px}
           <label for="f-nom">Nom<input id="f-nom" name="nom" type="text" autocomplete="name" placeholder="Votre nom" required></label>
           <label for="f-mail">E-mail<input id="f-mail" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" required></label>
         </div>
-        <label for="f-srv">Service souhaité<select id="f-srv" name="service"><option selected disabled>Choisir un service</option></select></label>
-        <label for="f-msg">Votre projet<textarea id="f-msg" name="message" placeholder="Objectifs, délais, budget approximatif…" required></textarea></label>
+        <label for="f-tel">Numéro de téléphone<input id="f-tel" name="telephone" type="tel" autocomplete="tel" placeholder="+261 380 507 590" required></label>
+        <label for="f-srv">Service souhaité<select id="f-srv" name="service" required><option value="" selected disabled>Choisir un service</option></select></label>
+        <label for="f-msg">Message<textarea id="f-msg" name="message" placeholder="Objectifs, délais, budget approximatif…" required></textarea></label>
         <button class="btn btn-primary" type="submit">Préparer ma demande <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <div class="status" id="status" role="status"></div>
       </form>
@@ -793,11 +900,11 @@ input,select,textarea{font-size:16px}
   <section class="sec alt">
     <div class="wrap">
       <div class="sec-head" data-reveal><span class="eyebrow">Questions fréquentes</span><h2>Avant de nous écrire.</h2></div>
-      <div class="faqs">
-        <details class="faq" data-reveal><summary>Comment obtenir un devis ?</summary><p>Remplissez le formulaire en décrivant votre besoin. Après un premier échange, nous vous envoyons un devis détaillé avec le périmètre, le calendrier et les livrables.</p></details>
-        <details class="faq" data-reveal><summary>Peut-on commencer petit puis faire évoluer la solution ?</summary><p>Oui. Nous recommandons souvent de démarrer par l'essentiel, de le mettre en service, puis d'ajouter des modules au fur et à mesure de vos besoins.</p></details>
-        <details class="faq" data-reveal><summary>Travaillez-vous avec des clients à distance ?</summary><p>Oui. Les échanges se font par appel, messagerie et visioconférence, avec des démonstrations régulières pour valider l'avancement.</p></details>
-        <details class="faq" data-reveal><summary>Qui est propriétaire du projet livré ?</summary><p>Les conditions de propriété et de livraison du code source sont précisées dans le devis et le contrat, avant le début du travail.</p></details>
+      <div class="faqs faq-grid">
+        <div class="faq-item faq-card" data-reveal><button class="faq-question" type="button" aria-expanded="false"><span>Comment obtenir un devis ?</span><span class="faq-icon">✓</span></button><div class="faq-answer"><p>Remplissez le formulaire en décrivant votre besoin. Après un premier échange, nous vous envoyons un devis détaillé avec le périmètre, le calendrier et les livrables.</p></div></div>
+        <div class="faq-item faq-card" data-reveal><button class="faq-question" type="button" aria-expanded="false"><span>Peut-on commencer petit puis faire évoluer la solution ?</span><span class="faq-icon">✓</span></button><div class="faq-answer"><p>Oui. Nous recommandons souvent de démarrer par l'essentiel, de le mettre en service, puis d'ajouter des modules au fur et à mesure de vos besoins.</p></div></div>
+        <div class="faq-item faq-card" data-reveal><button class="faq-question" type="button" aria-expanded="false"><span>Travaillez-vous avec des clients à distance ?</span><span class="faq-icon">✓</span></button><div class="faq-answer"><p>Oui. Les échanges se font par appel, messagerie et visioconférence, avec des démonstrations régulières pour valider l'avancement.</p></div></div>
+        <div class="faq-item faq-card" data-reveal><button class="faq-question" type="button" aria-expanded="false"><span>Qui est propriétaire du projet livré ?</span><span class="faq-icon">✓</span></button><div class="faq-answer"><p>Les conditions de propriété et de livraison du code source sont précisées dans le devis et le contrat, avant le début du travail.</p></div></div>
       </div>
     </div>
   </section>
@@ -811,12 +918,19 @@ input,select,textarea{font-size:16px}
       <div>
         <a class="brand" href="#accueil"><svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><defs><linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D97757"/><stop offset="1" stop-color="#E9AA85"/></linearGradient></defs><path d="M17 2l12.6 7.3v14.4L17 31 4.4 23.7V9.3z" fill="url(#brandGrad)"/><path d="M10.5 12.5h13M17 12.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg>Teknova <small>Sarl</small></a>
         <p>CRM sur mesure, applications web et applications mobile pour les entreprises qui veulent digitaliser leurs opérations et améliorer leur performance.</p>
+        <div class="socials" aria-label="Réseaux sociaux">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg class="fill-icon" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v6h4v-6h3.5l.5-4H13V9c0-.7.3-1 1-1z"/></svg></a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M14 3v11.2a4 4 0 1 1-3-3.9"/><path d="M14 3c1.2 2 2.6 2.8 5 3v3c-2-.1-3.7-.7-5-1.8"/></svg></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 10v6M8 7.5v.01M12 16v-3.2a2.8 2.8 0 0 1 5.6 0V16M12 10v6"/></svg></a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter/X" title="Twitter/X"><svg viewBox="0 0 24 24"><path d="M5 4l14 16M19 4L5 20"/></svg></a>
+          <a href="https://wa.me/261000000000" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/><path d="M9 8.5c.2 2.3 2.1 4.2 4.5 4.5l1.2-1.2c.2-.2.5-.2.8-.1l1.3.6c.3.1.4.5.3.8-.4 1-1.3 1.5-2.4 1.3-3.8-.7-6.1-3-6.8-6.8-.2-1.1.3-2 1.3-2.4.3-.1.7 0 .8.3l.6 1.3c.1.3.1.6-.1.8z"/></svg></a>
+        </div>
       </div>
       <div><h4>Services</h4><ul id="fsv"></ul></div>
-      <div><h4>Navigation</h4><ul><li><a href="#accueil">Accueil</a></li><li><a href="#services">Services</a></li><li><a href="#innovation">Innovation</a></li><li><a href="#methode">Méthode</a></li><li><a href="#technologies">Technologies</a></li><li><a href="#contact">Contact</a></li></ul></div>
-      <div><h4>Contact</h4><ul><li>contact@teknova.mg</li><li>+261 00 00 000 00</li><li><a href="#contact">Demander un devis</a></li></ul></div>
+      <div><h4>Navigation</h4><ul><li><a href="#accueil">Accueil</a></li><li><a href="#services">Services</a></li><li><a href="#methode">Méthode</a></li><li><a href="#technologies">Technologies</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>contact@teknova-sarl.com</li><li>+261 380 507 590</li><li><a href="#contact">Demander un devis</a></li></ul></div>
     </div>
-    <div class="fbot"><span>© 2026 Teknova Sarl. Tous droits réservés.</span><span>Développement web et mobile · CRM · ERP · IA</span></div>
+    <div class="fbot"><span>© 2026 Teknova Sarl. Tous droits réservés.</span><span>Applications mobiles · CRM · ERP</span></div>
   </div>
 </footer>
 
@@ -842,109 +956,68 @@ input,select,textarea{font-size:16px}
   /* ---------- Données des services ---------- */
   var S=[
   {id:"s-vitrine",c:"#2563EB",ic:"site",name:"Site vitrine",title:"Création de site vitrine",
-   tag:"Votre image de marque, accessible jour et nuit.",
-   short:"Un site rapide, élégant et pensé pour convertir vos visiteurs en clients, avec un référencement soigné.",
+   tag:"Vos clients vous trouvent-ils quand ils cherchent vos services sur Google ?",
+   short:"Un <strong>site vitrine</strong> professionnel présente votre entreprise, vos services et vos réalisations, et transforme les visiteurs en <strong>prospects</strong>. Nous réalisons des <strong>sites internet</strong> <strong>responsive</strong>, rapides et optimisés pour le <strong>référencement naturel</strong>, avec un <strong>design sur mesure</strong> qui reflète votre <strong>identité visuelle</strong>.",
    tags:["Design sur mesure","Responsive","SEO"],
-   intro:"Un site vitrine présente votre entreprise, vos offres et vos coordonnées de façon claire et crédible. Nous le concevons pour inspirer confiance dès les premières secondes, se charger vite sur mobile et être trouvé sur les moteurs de recherche.",
+   intro:"Un <strong>site vitrine</strong> professionnel présente votre entreprise, vos services et vos réalisations, et transforme les visiteurs en <strong>prospects</strong>. Nous réalisons des <strong>sites internet</strong> <strong>responsive</strong>, rapides et optimisés pour le <strong>référencement naturel</strong>, avec un <strong>design sur mesure</strong> qui reflète votre <strong>identité visuelle</strong>.",
    gains:["Une image professionnelle qui rassure vos futurs clients","Plus de demandes grâce à des contacts simples et visibles","Un site que vous modifiez vous-même, sans développeur"],
    feats:[["Design sur mesure","Une identité visuelle fidèle à votre marque, loin des modèles génériques que tout le monde reconnaît."],["Adapté à tous les écrans","Une mise en page qui s'ajuste à l'ordinateur, la tablette et le téléphone, avec des tests sur plusieurs appareils."],["Référencement naturel","Structure des pages, balises, vitesse de chargement et textes optimisés pour être mieux placé sur Google."],["Contact et réseaux sociaux","Formulaire, bouton WhatsApp, carte, liens vers vos pages sociales : vos clients vous joignent en un geste."],["Contenu modifiable","Un espace d'administration simple pour changer textes, images et actualités sans toucher au code."],["Plusieurs langues","Version française, anglaise ou malgache selon votre public, avec un sélecteur de langue clair."]],
-   who:["Entreprises et commerces qui veulent une vitrine en ligne","Cabinets et professions libérales","Hôtels, restaurants et lieux touristiques","Associations, ONG et institutions"],
+   who:["PME, artisans, commerçants et indépendants qui veulent être visibles localement","Restaurants, coiffeurs, plombiers, électriciens, architectes, photographes","Professions libérales : avocats, médecins, thérapeutes, consultants","Entreprises dont le site actuel est ancien et demande une refonte"],
    deliv:["Maquettes validées avec vous avant le développement","Site en ligne avec nom de domaine configuré","Certificat SSL (cadenas de sécurité)","Formation à la prise en main de l'administration","Sauvegarde initiale et suivi de mise en ligne","Mesure de la fréquentation du site, si vous le souhaitez"],
    tech:["HTML / CSS / JavaScript","React","WordPress","Laravel","Tailwind CSS"],
-   faq:[["Combien de temps faut-il pour créer un site vitrine ?","Cela dépend du nombre de pages et de la rapidité avec laquelle les contenus nous sont fournis. Le calendrier précis est indiqué dans le devis."],["Puis-je modifier le site moi-même ?","Oui. Nous vous livrons un espace d'administration et nous vous formons pour que vous gériez textes, images et actualités en autonomie."],["Le nom de domaine et l'hébergement sont-ils inclus ?","Nous pouvons nous en occuper pour vous, ou travailler avec ceux que vous possédez déjà. Voir notre service d'hébergement."]]},
-
-  {id:"s-web",c:"#4F46E5",ic:"web",name:"Développement web",title:"Développement web",
-   tag:"Des plateformes web solides, pensées pour durer.",
-   short:"Des plateformes robustes et évolutives, construites avec les technologies actuelles et des pratiques de qualité.",
-   tags:["Front-end","Back-end","API"],
-   intro:"Boutique en ligne, plateforme de réservation, espace membre, portail client : nous développons des solutions web complètes, de l'interface que vos utilisateurs voient jusqu'à la base de données qui stocke leurs informations.",
-   gains:["Une plateforme qui supporte la croissance de votre activité","Des utilisateurs qui s'y retrouvent grâce à une interface claire","Un code propre, plus simple à faire évoluer et à maintenir"],
-   feats:[["Interfaces modernes","Des écrans rapides et agréables, construits avec des composants réutilisables et testés."],["Serveur et base de données","Une architecture fiable pour stocker, protéger et retrouver vos données en quelques instants."],["API et intégrations","Connexion à des services tiers : paiement en ligne, envoi de SMS et d'e-mails, cartes, outils comptables."],["Comptes et authentification","Inscription, connexion sécurisée, gestion des profils et des droits d'accès selon les rôles."],["Sécurité intégrée","Validation des données, protection contre les attaques courantes, chiffrement des informations sensibles."],["Qualité et performance","Tests automatisés, optimisation du chargement et suivi des erreurs après la mise en ligne."]],
-   who:["Startups qui lancent leur produit","PME qui veulent vendre ou servir en ligne","Marketplaces et boutiques en ligne","Écoles, centres de formation et institutions"],
-   deliv:["Cahier des charges et choix d'architecture","Application déployée et accessible en ligne","Documentation technique pour votre équipe","Jeu de tests sur les fonctions essentielles","Formation de vos équipes à l'utilisation","Code source livré selon les termes du contrat"],
-   tech:["React","Vue.js","Node.js","Laravel","Python","PostgreSQL","MySQL"],
-   faq:[["Quelle technologie allez-vous utiliser ?","Nous la choisissons avec vous selon le besoin, le budget et les compétences disponibles chez vous. Nous expliquons chaque choix simplement."],["Peut-on ajouter des fonctions plus tard ?","Oui. Nous concevons la plateforme par modules, ce qui permet d'ajouter des fonctions sans tout reconstruire."],["Assurez-vous le suivi après la mise en ligne ?","Oui. Nous proposons de la maintenance, des corrections et des évolutions, avec un hébergement adapté si besoin."]]},
+   faq:[["Qu'est-ce qu'un site vitrine ?","C'est un <strong>site internet</strong> qui présente votre entreprise, vos services et vos coordonnées, sans boutique en ligne. Son rôle est de vous rendre visible et de générer des contacts."],["Quelle différence entre un site vitrine et un site e-commerce ?","Un <strong>site vitrine</strong> présente votre activité. Un site <strong>e-commerce</strong> permet de vendre en ligne avec panier et paiement. Nous réalisons les deux."],["Combien de pages faut-il pour un site vitrine ?","Un site vitrine compte souvent de 5 à 10 pages : accueil, services, à propos, réalisations, contact et <strong>mentions légales</strong>. Nous l'adaptons à votre activité."],["Combien de temps faut-il pour créer un site vitrine ?","Compter généralement de 3 à 8 semaines selon le nombre de pages et la rapidité de validation des contenus."],["Mon site sera-t-il visible sur Google ?","Nous optimisons la structure, les balises, la <strong>vitesse de chargement</strong> et les contenus pour le <strong>référencement naturel</strong>. Le positionnement progresse ensuite avec le temps et les contenus ajoutés."],["Mon site sera-t-il adapté aux mobiles ?","Oui. Tous nos sites sont <strong>responsive</strong> et pensés <strong>mobile first</strong> : ils s'affichent parfaitement sur téléphone, tablette et ordinateur."],["Pourrai-je modifier mon site moi-même ?","Oui. Nous installons un <strong>CMS</strong> simple et vous formons pour modifier vos textes, vos images et vos pages."],["Combien coûte la création d'un site vitrine ?","Le prix dépend du nombre de pages, du design et des fonctionnalités. Un devis gratuit après l'analyse de votre projet permet de chiffrer précisément."],["L'hébergement et le nom de domaine sont-ils inclus ?","Oui, nous nous occupons du <strong>nom de domaine</strong>, de l'<strong>hébergement</strong> et du <strong>certificat SSL</strong>, et nous restons à votre disposition pour la <strong>maintenance</strong>."],["Mon site respecte-t-il les obligations légales ?","Oui. Nous ajoutons les <strong>mentions légales</strong>, la <strong>politique de confidentialité</strong> et le bandeau cookies, conformément au <strong>RGPD</strong> en France et à la Loi 25 au Québec."]]},
 
   {id:"s-logiciel",c:"#0891B2",ic:"app",name:"Web application & logiciel",title:"Web application et logiciel sur mesure",
-   tag:"L'outil métier qui correspond exactement à votre façon de travailler.",
+   tag:"Votre entreprise a besoin d'une <strong>application web</strong> pour gérer son activité ?",
    short:"Des outils métier sur mesure qui automatisent vos tâches et simplifient le travail de vos équipes.",
    tags:["Sur mesure","Cloud","Bureau"],
-   intro:"Quand les logiciels du marché ne collent pas à votre activité, nous construisons l'outil qui vous correspond : en ligne, installé sur ordinateur, ou les deux. Il reprend vos règles, vos documents et vos habitudes de travail.",
+   intro:"Nos développeurs web conçoivent des <strong>applications web</strong> sur mesure, évolutives et sécurisées : du <strong>développement front-end</strong> au <strong>développement back-end</strong>, jusqu'au déploiement sur le cloud. Elles fonctionnent dans tous les navigateurs, sur ordinateur comme sur appareils mobiles.",
    gains:["Moins de tâches répétitives et moins d'erreurs de saisie","Toute l'équipe travaille sur les mêmes données à jour","Un outil qui évolue avec vos règles métier"],
    feats:[["Analyse de vos processus","Nous observons comment vous travaillez aujourd'hui pour concevoir un outil qui simplifie, sans bouleverser."],["Automatisation","Calculs, documents, notifications et relances générés automatiquement à partir de vos données."],["Rôles et droits d'accès","Chacun voit et modifie uniquement ce qui le concerne : direction, équipe, partenaires."],["Tableaux de bord et rapports","Indicateurs lisibles en un coup d'œil et rapports prêts à imprimer ou à partager."],["Import et export","Reprise de vos fichiers existants, export en Excel, PDF et CSV pour vos échanges habituels."],["Web ou bureau","Application accessible depuis un navigateur ou logiciel installé sur Windows, selon votre contexte de travail."]],
    who:["Entreprises aux processus spécifiques","Cabinets, cliniques et centres de soins","Sociétés de logistique et de distribution","Établissements de formation"],
    deliv:["Étude de vos besoins et maquettes de l'outil","Logiciel ou application web prêt à l'emploi","Reprise de vos données existantes","Guide d'utilisation et formation","Mises à jour de corrections après livraison","Accompagnement pour les évolutions futures"],
    tech:["Node.js","Laravel","Python","Electron","PostgreSQL","API REST"],
-   faq:[["Quelle différence avec un logiciel du marché ?","Un logiciel standard impose ses méthodes. Un outil sur mesure suit les vôtres et ne contient que ce qui vous est utile."],["Pouvez-vous reprendre mes fichiers Excel ?","Oui. Nous importons vos données existantes et nous vérifions leur cohérence avant la mise en service."],["L'outil peut-il fonctionner sans internet ?","Selon le besoin, une version utilisable hors connexion avec synchronisation ultérieure est possible. Nous en discutons lors du cadrage."]]},
-
-  {id:"s-mobile",c:"#059669",ic:"mobile",name:"Application mobile",title:"Application mobile Android et iOS",
-   tag:"Votre activité dans la poche de vos clients.",
-   short:"Des applications fluides et modernes, publiées sur Google Play et l'App Store, avec une seule équipe.",
+   faq:[["Qu'est-ce qu'une application web ?","C'est un logiciel accessible depuis un <strong>navigateur web</strong>, sans installation. Contrairement à un site vitrine, il permet d'interagir : se connecter, saisir des données, gérer des commandes, suivre des dossiers."],["Quelle différence entre un site web et une application web ?","Un site web diffuse de l'information. Une <strong>application web</strong> exécute une <strong>logique métier</strong> : comptes utilisateurs, calculs, traitements, <strong>tableau de bord</strong>."],["Quelles technologies utilisez-vous ?","Nous choisissons les technologies selon votre projet : <strong>Angular</strong>, <strong>Node.js</strong>, <strong>PHP</strong>, <strong>Django</strong>, <strong>Ruby on Rails</strong>, <strong>PostgreSQL</strong>, <strong>MongoDB</strong>. Nous vous conseillons après l'audit."],["Mon application sera-t-elle utilisable sur mobile ?","Oui. Grâce à la <strong>conception réactive</strong>, elle s'adapte à tous les écrans. Elle peut aussi devenir une application web progressive, ou être prolongée par une <strong>application mobile</strong>."],["Combien de temps faut-il pour développer une application web ?","Un MVP peut être livré en quelques semaines, une application complète en plusieurs mois. Nous livrons par étapes pour que vous testiez tôt."],["Combien coûte le développement d'une application web ?","Le prix dépend des fonctionnalités, des intégrations et du nombre d'utilisateurs. Un devis gratuit après l'analyse de votre projet permet de chiffrer précisément."],["Mes données sont-elles sécurisées ?","La sécurité est prévue dès la conception : <strong>authentification</strong>, accès par rôles, chiffrement <strong>SSL</strong>, sauvegardes et conformité aux règles de protection des données (RGPD en France, Loi 25 au Québec)."],["Pouvez-vous connecter l'application à mes outils existants ?","Oui. Nous créons des <strong>API</strong> et des intégrations avec votre CRM, votre ERP, votre comptabilité et vos autres logiciels."],["Qui est propriétaire du code ?","Vous. Le <strong>code source</strong>, le <strong>dépôt</strong> et les accès vous sont remis à la livraison."],["Assurez-vous la maintenance après la livraison ?","Oui. Nous proposons un contrat de maintenance : mises à jour, corrections, supervision, support et nouvelles fonctionnalités."]]
+  },
+  {id:"s-mobile",c:"#059669",ic:"mobile",name:"Application mobile",title:"Application mobile : iOS et Android sur mesure",
+   tag:"Avez-vous une idée d'application mobile ou une application existante à faire évoluer ?",
+   short:"Nos développeurs conçoivent des <strong>applications mobiles</strong> pour <strong>Android</strong> et <strong>iOS</strong> performantes, en développement natif ou multiplateforme, puis les publient sur l'<strong>App Store</strong> et <strong>Google Play</strong>.",
    tags:["Android","iOS","Multiplateforme"],
-   intro:"Nous créons des applications mobiles pour Android et iOS qui offrent une expérience fluide, même avec une connexion limitée. Une seule équipe s'occupe de la conception, du développement et de la publication.",
+   intro:"Nos développeurs conçoivent des <strong>applications mobiles</strong> pour <strong>Android</strong> et <strong>iOS</strong> performantes, en développement natif ou multiplateforme, puis les publient sur l'<strong>App Store</strong> et <strong>Google Play</strong>.",
    gains:["Un contact direct et permanent avec vos clients","Une application disponible sur les deux grands systèmes","Une expérience rapide et intuitive, adaptée au téléphone"],
    feats:[["Android et iOS","Une application pour les deux plateformes, développée avec une base de code commune pour maîtriser les coûts."],["Interface fluide","Navigation simple, animations douces et gestes naturels, testés sur plusieurs modèles de téléphones."],["Notifications push","Informez vos utilisateurs au bon moment : commande, rendez-vous, promotion, rappel."],["Mode hors connexion","Les fonctions essentielles restent utilisables sans internet, avec synchronisation au retour du réseau."],["Paiement et services tiers","Intégration du paiement mobile, de la géolocalisation, de l'appareil photo et des services de messagerie."],["Publication accompagnée","Création des fiches Google Play et App Store, soumission et suivi jusqu'à la mise en ligne."]],
    who:["Commerces et services qui veulent fidéliser","Entreprises avec des équipes terrain","Écoles, associations et organisateurs d'événements","Startups qui lancent une application grand public"],
    deliv:["Maquettes de l'application validées avec vous","Application Android et iOS testée","Publication sur Google Play et App Store","Connexion à votre système ou à votre site","Tableau de suivi des utilisateurs, si besoin","Mises à jour après les changements de système"],
    tech:["Flutter","React Native","Kotlin","Swift","Firebase","API REST"],
-   faq:[["Faut-il deux développements séparés pour Android et iOS ?","Pas forcément. Avec des outils multiplateformes, une seule base de code produit les deux applications. Nous choisissons la meilleure option selon vos besoins."],["Qui publie l'application sur les boutiques ?","Nous préparons et soumettons l'application avec vous. Les comptes développeur sont idéalement à votre nom."],["L'application sera-t-elle reliée à mon site ?","Oui, si vous le souhaitez. Elle peut partager les mêmes comptes et les mêmes données que votre plateforme web."]]},
+   faq:[["Combien coûte le développement d'une application mobile ?","Le prix dépend des fonctionnalités, du nombre de plateformes, du design et des intégrations. Un devis gratuit après l'analyse de votre projet permet de chiffrer précisément."],["Combien de temps faut-il pour développer une application ?","Un MVP peut être livré en quelques semaines, une application complète en plusieurs mois. Nous livrons par itérations pour que vous testiez tôt."],["Quelle différence entre application native et multiplateforme ?","Une <strong>application native</strong> est écrite spécifiquement pour iOS ou Android. Une application <strong>multiplateforme</strong> (React Native, Flutter) partage une seule <strong>base de code</strong> entre les deux systèmes."],["React Native ou Flutter : que choisir ?","Les deux permettent de créer des applications iOS et Android performantes. Le choix dépend de votre projet, de vos équipes et des fonctionnalités attendues : nous vous conseillons après l'audit."],["Faut-il développer pour iOS, pour Android, ou pour les deux ?","Cela dépend de votre public. Le <strong>développement multiplateforme</strong> permet de couvrir les deux avec des délais maîtrisés."],["Pouvez-vous publier l'application sur l'App Store et Google Play ?","Oui. Nous gérons les comptes développeur, la préparation des fiches, les captures d'écran et la validation par les <strong>boutiques d'applications</strong>."],["Mon application peut-elle envoyer des notifications push ?","Oui. Les <strong>notifications push</strong>, la <strong>géolocalisation</strong>, <strong>l'authentification</strong> et le paiement font partie de nos fonctionnalités courantes."],["Pouvez-vous reprendre une application existante ?","Oui. Nous auditons le <strong>code source</strong>, corrigeons les anomalies et faisons évoluer l'application, ou la reconstruisons si nécessaire."],["Qui est propriétaire du code et de l'application ?","Vous. Le <strong>code source</strong>, les comptes de publication et les contenus vous sont remis à la livraison."],["Assurez-vous la maintenance après la publication ?","Oui. Nous proposons un contrat de maintenance : mises à jour des systèmes d'exploitation, corrections, support et nouvelles fonctionnalités."]]
+  },
 
-  {id:"s-crm",c:"#D97706",ic:"crm",name:"CRM",title:"CRM : gestion de la relation client",
-   tag:"Chaque client suivi, chaque vente relancée.",
-   short:"Centralisez clients, contacts et opportunités pour suivre chaque vente et fidéliser plus facilement.",
+  {id:"s-crm",c:"#D97706",ic:"crm",name:"CRM",title:"Création de CRM sur mesure",
+   tag:"Votre logiciel CRM actuel est trop rigide, trop cher ou ne correspond pas à votre façon de vendre ?",
+   short:"Nous concevons des <strong>systèmes CRM</strong> sur mesure, accessibles sur le web et en <strong>CRM mobile</strong>. Une solution qui centralise vos données client, structure votre <strong>pipeline des ventes</strong> et s'adapte à vos <strong>processus métier</strong>, et non l'inverse.",
    tags:["Contacts","Pipeline","Relances"],
-   intro:"Un CRM réunit au même endroit tout ce que vous savez de vos clients et prospects : coordonnées, échanges, devis et rendez-vous. Votre équipe commerciale sait toujours quoi faire ensuite, et plus aucune opportunité ne se perd.",
+   intro:"Nous concevons des <strong>systèmes CRM</strong> sur mesure, accessibles sur le web et en <strong>CRM mobile</strong>. Une solution qui centralise vos données client, structure votre <strong>pipeline des ventes</strong> et s'adapte à vos <strong>processus métier</strong>, et non l'inverse.",
    gains:["Aucune demande oubliée grâce aux rappels automatiques","Une équipe commerciale qui travaille avec la même information","Une vision claire de ce qui se vend et de ce qui bloque"],
    feats:[["Fiches clients centralisées","Coordonnées, historique des échanges, documents et notes rassemblés dans une seule fiche."],["Suivi des ventes en étapes","Un tableau visuel qui montre où en est chaque opportunité, du premier contact à la signature."],["Relances et rappels","Tâches et alertes automatiques pour rappeler un prospect ou envoyer un devis à temps."],["Historique des échanges","Appels, e-mails et rendez-vous consignés, pour que toute l'équipe reprenne le dossier sans perdre le fil."],["Rapports commerciaux","Chiffre d'affaires prévisionnel, performance par vendeur et taux de transformation."],["Connexion à vos outils","Formulaires de votre site, messagerie et autres outils reliés lorsque leurs services le permettent."]],
    who:["Équipes commerciales de PME","Agences et sociétés de services","Écoles et organismes qui gèrent des candidats","Indépendants avec un portefeuille de clients"],
    deliv:["Configuration adaptée à votre façon de vendre","Reprise de votre liste de clients existante","Tableaux de bord pour la direction","Formation de l'équipe commerciale","Documentation d'utilisation","Évolutions selon vos retours après mise en service"],
    tech:["Laravel","Node.js","PostgreSQL","React","API REST"],
-   faq:[["Un CRM est-il utile pour une petite équipe ?","Oui. Dès que plusieurs personnes échangent avec les clients, un CRM évite les doublons et les oublis."],["Peut-on importer mes contacts existants ?","Oui. Nous importons vos fichiers de contacts, nettoyons les doublons et vérifions les données avant l'ouverture."],["Le CRM peut-il être relié à mon ERP ?","C'est possible et même recommandé : les ventes alimentent alors la facturation et le stock sans ressaisie."]]},
+   faq:[["Qu’est-ce qu’un CRM sur mesure ?","C’est un logiciel de <strong>gestion de la relation client</strong> conçu spécialement pour votre entreprise, selon vos processus, vos utilisateurs et vos outils, plutôt qu’une solution standard."],["Quelle est la différence entre un CRM sur mesure et un CRM du marché comme Salesforce ou HubSpot ?","Un CRM du marché est prêt à l’emploi mais limité par ses fonctionnalités et facturé par licence. Un CRM sur mesure s’adapte exactement à vos besoins et vous appartient."],["Combien coûte la création d’un CRM sur mesure ?","Le coût dépend du nombre de modules, des intégrations et de la complexité des règles métier. Un devis gratuit après l’analyse de vos besoins permet de chiffrer précisément votre projet."],["Combien de temps faut-il pour développer un CRM ?","Un CRM simple peut être livré en quelques semaines, un projet complet avec intégrations en plusieurs mois. Nous livrons par étapes pour que vous utilisiez l’outil rapidement."],["Le CRM peut-il être utilisé sur mobile ?","Oui. Nous créons des <strong>applications CRM</strong> web responsives ou des applications mobiles iOS et Android pour vos équipes terrain."],["Peut-on connecter le CRM à nos outils existants ?","Oui. Nous réalisons l’<strong>intégration CRM</strong> avec votre <strong>ERP</strong>, votre comptabilité, votre messagerie, vos outils d’emailing et vos autres logiciels via API."],["Peut-on migrer les données de notre ancien CRM ?","Oui. Nous reprenons vos contacts, historiques et opportunités depuis votre ancien CRM (Salesforce, Zoho, Excel, etc.) en préservant la qualité des données."],["Mes données sont-elles sécurisées ?","La sécurité est intégrée dès la conception : accès par rôles, chiffrement, sauvegardes régulières et conformité aux réglementations de protection des données (RGPD en France, Loi 25 au Québec)."],["Un CRM sur mesure est-il adapté à une petite entreprise ?","Oui, si vos besoins sont spécifiques ou si vous voulez éviter des abonnements croissants. Nous pouvons commencer par un MVP simple puis le faire évoluer."],["Qui assure la maintenance après la livraison ?","Nous proposons un contrat de maintenance et d’évolution : corrections, mises à jour de sécurité, support et nouvelles fonctionnalités."]]},
 
-  {id:"s-erp",c:"#E11D48",ic:"erp",name:"ERP",title:"ERP : gestion intégrée de l'entreprise",
-   tag:"Toute votre entreprise pilotée depuis un seul système.",
+  {id:"s-erp",c:"#E11D48",ic:"erp",name:"ERP",title:"Développement ERP: un outil qui gère toute votre entreprise",
+   tag:"Vos équipes jonglent-elles entre plusieurs logiciels et des tableurs ?",
    short:"Pilotez stock, facturation, achats, ressources humaines et comptabilité depuis un seul système intégré.",
    tags:["Stock","Facturation","RH"],
-   intro:"Un ERP relie les grandes fonctions de votre entreprise dans un même outil : une vente met à jour le stock, déclenche la facture et alimente la comptabilité. Nous le construisons par modules, pour démarrer avec l'essentiel et grandir à votre rythme.",
+   intro:"Un <strong>ERP sur mesure</strong> réunit tous vos <strong>processus métier</strong> dans un seul <strong>logiciel de gestion</strong>. Nous concevons des <strong>systèmes ERP</strong> adaptés à votre façon de travailler. Grâce à l'<strong>automatisation</strong>, vos équipes gagnent du temps chaque jour.",
    gains:["Une information unique et à jour pour tous les services","Moins de ressaisies, donc moins d'erreurs","Des chiffres fiables pour décider rapidement"],
    feats:[["Stocks et entrepôts","Entrées, sorties, seuils d'alerte et inventaires pour ne jamais être pris au dépourvu."],["Achats et fournisseurs","Commandes, réceptions et suivi des fournisseurs, rattachés à votre stock."],["Ventes et facturation","Devis, bons de commande, factures et suivi des paiements, générés à partir de vos données."],["Comptabilité","Écritures, rapprochements et états financiers préparés pour votre comptable."],["Ressources humaines","Fiches du personnel, congés, présences et éléments de paie selon vos règles."],["Pilotage et rapports","Tableaux de bord par service et indicateurs clés pour la direction."]],
    who:["Entreprises de commerce et de distribution","Sociétés de production et d'artisanat","Entreprises de services avec plusieurs équipes","Groupes et sociétés multi-sites"],
    deliv:["Étude des processus et choix des modules","ERP configuré selon vos règles de gestion","Reprise de vos données de départ","Formation par métier et par service","Mise en service progressive","Support et évolutions après le démarrage"],
    tech:["Laravel","Node.js","PostgreSQL","React","Docker"],
-   faq:[["Faut-il tout mettre en place d'un seul coup ?","Non. Nous recommandons un déploiement par modules : on commence par le plus urgent, puis on ajoute les autres."],["Un ERP sur mesure est-il mieux qu'un ERP du marché ?","Cela dépend de votre cas. Nous comparons honnêtement les deux options avec vous avant de proposer un développement."],["Mes équipes devront-elles être formées ?","Oui, et nous le prévoyons : formations par métier, guides d'utilisation et assistance au démarrage."]]},
+   faq:[["Qu'est-ce qu'un ERP ?","Un <strong>ERP</strong> (progiciel de gestion intégré) est un logiciel qui réunit les fonctions de l'entreprise : stocks, achats, ventes, <strong>facturation</strong>, comptabilité, production et ressources humaines."],["Quelle différence entre un ERP sur mesure et un ERP du marché ?","Un ERP du marché est prêt à l'emploi mais impose ses façons de faire. Un ERP sur mesure s'adapte exactement à vos processus et vous appartient."],["Quelle différence entre un ERP et un CRM ?","Un <strong>CRM</strong> gère la relation client (contacts, ventes). Un ERP gère l'ensemble de l'entreprise. Nous pouvons intégrer un CRM dans votre ERP."],["Combien de temps faut-il pour développer un ERP ?","Un premier module peut être livré en quelques semaines, un ERP complet en plusieurs mois. Nous livrons module par module pour que vous utilisiez l'outil rapidement."],["Peut-on commencer par quelques modules seulement ?","Oui. Nous commençons par les modules prioritaires (par exemple stocks et facturation), puis nous ajoutons les autres au fil du temps."],["Peut-on connecter l'ERP à nos outils existants ?","Oui. Nous réalisons l'<strong>intégration</strong> avec votre comptabilité, votre site e-commerce, votre messagerie et vos autres logiciels via <strong>API</strong>."],["Peut-on migrer les données de notre ancien logiciel ?","Oui. Nous reprenons vos données depuis vos anciens logiciels ou vos fichiers Excel, en préservant leur qualité."],["Combien coûte le développement d'un ERP sur mesure ?","Le prix dépend du nombre de modules, des intégrations et du nombre d'utilisateurs. Un devis gratuit après l'analyse de votre projet permet de chiffrer précisément."],["Mes données sont-elles sécurisées ?","La sécurité est intégrée dès la conception : accès par rôles, chiffrement, sauvegardes régulières et conformité aux règles de protection des données (RGPD en France, Loi 25 au Québec)."],["Qui assure la maintenance après la livraison ?","Nous proposons un contrat de maintenance et d'évolution : corrections, mises à jour de sécurité, support et nouveaux modules."]]},
 
-  {id:"s-hebergement",c:"#7C3AED",ic:"host",name:"Hébergement",title:"Hébergement et maintenance",
-   tag:"Votre site et vos applications, toujours disponibles et protégés.",
-   short:"Un hébergement fiable et sécurisé pour vos sites et applications, avec sauvegardes et suivi technique.",
-   tags:["SSL","Sauvegardes","Maintenance"],
-   intro:"Un bon site ou une bonne application a besoin d'un support solide. Nous hébergeons vos projets sur des serveurs fiables, nous surveillons leur bon fonctionnement et nous nous occupons des mises à jour techniques, pour que vous vous concentriez sur votre activité.",
-   gains:["Un site accessible et rapide, sans souci technique","Vos données sauvegardées et protégées","Un interlocuteur unique en cas de problème"],
-   feats:[["Serveurs fiables","Infrastructure choisie selon le trafic et les besoins de votre projet, avec possibilité de monter en puissance."],["Sécurité et certificat SSL","Connexion chiffrée, pare-feu et protections contre les attaques courantes."],["Sauvegardes régulières","Copies automatiques de vos données et de vos fichiers, avec restauration en cas d'incident."],["Surveillance continue","Contrôle de la disponibilité et alertes en cas de panne, pour réagir avant que vos clients ne s'en aperçoivent."],["Domaines et e-mails pro","Réservation et gestion de votre nom de domaine, adresses e-mail à votre nom d'entreprise."],["Maintenance et migration","Mises à jour de sécurité, corrections et transfert de votre site existant depuis un autre hébergeur."]],
-   who:["Entreprises qui ont déjà un site ou une application","Clients de Teknova après la livraison de leur projet","Structures sans équipe technique interne","Sites qui évoluent et reçoivent plus de visites"],
-   deliv:["Mise en place et configuration de l'hébergement","Nom de domaine et certificat SSL actifs","Sauvegardes automatiques planifiées","Adresses e-mail professionnelles","Rapport d'état sur demande","Support technique en cas d'incident"],
-   tech:["Linux","Nginx","Docker","SSL / TLS","Sauvegardes automatiques"],
-   faq:[["Pouvez-vous héberger un site qui n'a pas été créé par Teknova ?","Oui, après un contrôle technique. Nous pouvons aussi migrer votre site depuis un autre hébergeur."],["Que se passe-t-il en cas de panne ?","Nous surveillons la disponibilité et intervenons dès qu'une alerte survient. Vos sauvegardes permettent de restaurer le service."],["Puis-je garder mon nom de domaine actuel ?","Oui. Nous le configurons avec votre hébergement, sans que vous ne perdiez votre adresse."]]},
-
-  {id:"s-ia",c:"#0D9488",ic:"ai",name:"Assistance IA",title:"Assistance par intelligence artificielle",
-   tag:"L'IA qui travaille pour vous, sous votre contrôle.",
-   short:"Assistants intelligents, automatisations et chatbots qui répondent à vos clients et font gagner du temps.",
-   tags:["Chatbot","Automatisation","Analyse"],
-   intro:"Nous intégrons l'intelligence artificielle là où elle apporte une vraie valeur : répondre aux questions de vos clients, traiter vos documents, préparer des synthèses ou automatiser des tâches répétitives. Chaque solution est cadrée, testée et supervisée.",
-   gains:["Des réponses rapides à vos clients, à toute heure","Des heures gagnées sur les tâches répétitives","Une IA adaptée à votre activité et à vos données"],
-   feats:[["Chatbots pour vos clients","Un assistant qui répond aux questions fréquentes sur votre site ou vos canaux de messagerie, et passe la main à un humain si nécessaire."],["Assistants internes","Vos équipes interrogent vos documents et procédures en langage naturel et retrouvent l'information plus vite."],["Automatisation de tâches","Tri des messages, extraction d'informations, préparation de réponses et mise à jour de vos outils."],["Analyse de documents","Lecture et synthèse de contrats, factures ou rapports, avec relecture humaine avant utilisation."],["Contenus assistés","Aide à la rédaction de fiches produits, descriptions et messages, dans le ton de votre marque."],["Formation et accompagnement","Prise en main pour vos équipes, bonnes pratiques et règles d'usage pour utiliser l'IA sereinement."]],
-   who:["Entreprises qui reçoivent beaucoup de demandes répétitives","Services clients et équipes commerciales","Cabinets et structures qui traitent beaucoup de documents","Équipes qui veulent gagner du temps sans embaucher"],
-   deliv:["Étude des cas d'usage les plus utiles","Assistant ou automatisation configurés et testés","Règles de confidentialité et de supervision","Intégration à votre site, votre messagerie ou vos outils","Formation et guide d'utilisation","Suivi de la qualité des réponses et ajustements"],
-   tech:["Modèles de langage","Chatbots","Automatisation de flux","Python","API REST"],
-   faq:[["L'IA remplace-t-elle mon équipe ?","Non. Elle prend en charge les tâches répétitives pour que votre équipe se concentre sur ce qui demande du jugement et du contact humain."],["Mes données restent-elles confidentielles ?","Nous définissons avec vous quelles données l'assistant peut utiliser et nous configurons les accès en conséquence."],["Les réponses de l'IA sont-elles fiables ?","Nous testons l'assistant sur vos cas réels, limitons son périmètre et prévoyons une relecture humaine pour les sujets sensibles."]]}
   ];
   var byId={};S.forEach(function(s){byId[s.id]=s});
-
-  var STEPS=[
-    ["Échange et cadrage","Nous écoutons votre besoin et fixons les objectifs, le périmètre et les priorités."],
-    ["Proposition et maquette","Vous recevez un devis détaillé et des maquettes à valider avant tout développement."],
-    ["Réalisation par étapes","Nous construisons avec des démonstrations régulières pour que vous puissiez réagir tôt."],
-    ["Livraison et suivi","Tests, mise en ligne, formation, puis assistance pour la suite."]
-  ];
 
   /* ---------- Illustrations vectorielles ---------- */
   function art(id){
@@ -959,12 +1032,6 @@ input,select,textarea{font-size:16px}
       for(i=0;i<3;i++){x=64+i*76;b+='<rect x="'+x+'" y="142" width="70" height="58" rx="8" class="gl2"/><circle cx="'+(x+15)+'" cy="157" r="6" class="a"/>'+ln(x+10,172,50,'gl')+ln(x+10,184,34,'gl')}
       b+='<g class="sh fl"><rect x="298" y="86" width="64" height="118" rx="12" class="nv"/><rect x="303" y="94" width="54" height="102" rx="8" class="w"/><rect x="309" y="102" width="42" height="26" rx="5" class="a2"/>'+ln(309,136,40,'gl')+ln(309,148,28,'gl')+'<rect x="309" y="164" width="42" height="14" rx="7" class="a"/></g>'+
         '<g class="sh fl" style="animation-delay:-2s"><circle cx="86" cy="214" r="26" class="a"/><circle cx="84" cy="211" r="9" class="ws"/><path d="M91 218l8 8" class="ws"/></g>';
-    }else if(id==='s-web'){
-      b='<g class="sh"><rect x="44" y="40" width="240" height="172" rx="12" class="nv"/><circle cx="58" cy="54" r="3.5" fill="#FF6B6B"/><circle cx="70" cy="54" r="3.5" fill="#FFC857"/><circle cx="82" cy="54" r="3.5" fill="#3DDC97"/></g>';
-      var rows=[[76,62,44,'c1',112,60,'c3'],[92,74,80,'c2',160,40,'c4'],[108,74,56,'c4',136,70,'c1'],[124,86,96,'c3'],[140,86,64,'c2',156,48,'c4'],[156,74,36,'c1'],[172,62,28,'c1']];
-      rows.forEach(function(r){b+=ln(r[1],r[0],r[2],r[3]);if(r[4])b+=ln(r[4],r[0],r[5],r[6])});
-      b+='<rect x="62" y="188" width="8" height="12" rx="2" class="a"/>'+fr(224,104,150,112)+'<rect x="236" y="134" width="126" height="28" rx="6" class="a2"/>'+ln(236,172,100,'gl')+ln(236,186,72,'gl')+
-        '<g class="fl"><path d="M314 58v30c0 5 11 9 24 9s24-4 24-9V58z" class="a2"/><ellipse cx="338" cy="58" rx="24" ry="9" class="a"/><path d="M314 72c0 5 11 9 24 9s24-4 24-9" fill="none" stroke="#fff" stroke-width="2"/></g>';
     }else if(id==='s-logiciel'){
       b='<g class="sh"><rect x="64" y="36" width="272" height="164" rx="14" class="nv"/><rect x="72" y="44" width="256" height="148" rx="8" class="w"/></g><path d="M180 200h40l8 22h-56z" class="gl"/><rect x="152" y="220" width="96" height="8" rx="4" class="gl"/>'+
         '<rect x="72" y="44" width="54" height="148" rx="8" class="gl2"/><rect x="80" y="58" width="38" height="10" rx="4" class="a3"/>'+ln(80,80,38,'gl')+ln(80,96,28,'gl')+ln(80,112,34,'gl')+
@@ -972,17 +1039,11 @@ input,select,textarea{font-size:16px}
       for(i=0;i<4;i++){y=82+i*24;b+='<circle cx="146" cy="'+(y+7)+'" r="6" class="a2"/>'+ln(160,y+3,70,'gl')+ln(238,y+3,34,'gl')+'<rect x="284" y="'+y+'" width="32" height="14" rx="7" class="'+(i%2?'a2':'a')+'"/>'}
       b+='<g class="sh"><g class="spin"><circle cx="352" cy="64" r="20" fill="none" stroke="var(--c)" stroke-width="10" stroke-dasharray="6 5.2"/></g><circle cx="352" cy="64" r="15" class="a"/><circle cx="352" cy="64" r="6" class="w"/></g>';
     }else if(id==='s-mobile'){
-      b='<g class="sh"><rect x="96" y="36" width="108" height="196" rx="20" class="nv"/><rect x="101" y="42" width="98" height="184" rx="16" class="w"/></g><rect x="108" y="50" width="84" height="22" rx="8" class="a"/>';
-      for(i=0;i<3;i++){y=82+i*30;b+='<rect x="108" y="'+y+'" width="84" height="26" rx="8" class="gl2"/><circle cx="120" cy="'+(y+13)+'" r="7" class="a2"/>'+ln(132,y+6,50,'gl')+ln(132,y+15,30,'gl')}
-      b+='<rect x="108" y="196" width="84" height="22" rx="10" class="gl2"/><circle cx="126" cy="207" r="4" class="a"/><circle cx="150" cy="207" r="4" class="gl"/><circle cx="174" cy="207" r="4" class="gl"/>'+
-        '<g class="sh fl" style="animation-delay:-1.5s"><rect x="208" y="58" width="108" height="186" rx="20" class="nv"/><rect x="213" y="64" width="98" height="174" rx="16" class="w"/><rect x="220" y="74" width="84" height="56" rx="10" class="a"/><path d="M228 118l16-14 14 8 18-20 20 10" class="ws" style="stroke-width:3"/>'+ln(220,142,60,'gl')+ln(220,154,40,'gl')+'<rect x="220" y="170" width="84" height="22" rx="8" class="gl2"/><rect x="220" y="204" width="84" height="22" rx="11" class="a2"/></g>'+
+      b='<g class="sh"><rect x="36" y="34" width="344" height="208" rx="18" class="w"/><rect x="52" y="46" width="312" height="184" rx="14" class="gl2"/></g>'+
+        '<image href="image/mobile.png" x="80" y="52" width="280" height="170" preserveAspectRatio="xMidYMid meet"/>' +
         '<g class="sh fl"><rect x="270" y="24" width="116" height="40" rx="12" class="w"/><circle cx="290" cy="44" r="10" class="a"/>'+ln(308,37,60,'gl')+ln(308,49,40,'gl')+'</g>'+chip(20,150,68,'Android')+chip(20,182,68,'iOS');
     }else if(id==='s-crm'){
-      for(i=0;i<3;i++){x=48+i*110;b+='<rect x="'+x+'" y="48" width="100" height="170" rx="12" class="gl2"/><rect x="'+(x+10)+'" y="58" width="44" height="8" rx="4" class="a"/><circle cx="'+(x+86)+'" cy="62" r="7" class="a3"/>'}
-      var cards=[[0,76],[0,118],[0,160],[1,76],[1,118],[2,76]];
-      cards.forEach(function(c){x=48+c[0]*110;y=c[1];b+='<g class="sh"><rect x="'+(x+8)+'" y="'+y+'" width="84" height="34" rx="8" class="w"/><circle cx="'+(x+22)+'" cy="'+(y+17)+'" r="7" class="a2"/>'+ln(x+34,y+10,46,'gl')+ln(x+34,y+21,30,'gl')+'</g>'});
-      b+='<g class="sh fl"><rect x="266" y="130" width="84" height="40" rx="9" class="a"/><circle cx="282" cy="150" r="8" class="w"/>'+ln(296,143,44,'wo')+ln(296,155,28,'wo2')+'</g>'+
-        '<g class="sh fl" style="animation-delay:-2s"><circle cx="366" cy="40" r="17" class="a"/><path d="M358 40l6 6 11-12" class="ws"/></g>';
+      b='<image href="image/crm2.png" x="60" y="38" width="280" height="180" preserveAspectRatio="xMidYMid meet"/>';
     }else if(id==='s-erp'){
       b=fr(36,34,328,184)+'<rect x="44" y="64" width="30" height="144" rx="8" class="gl2"/>';
       for(i=0;i<4;i++)b+='<rect x="52" y="'+(74+i*26)+'" width="14" height="14" rx="4" class="'+(i===0?'a':'a2')+'"/>';
@@ -993,11 +1054,6 @@ input,select,textarea{font-size:16px}
       b+='<path d="M'+pts.map(function(p){return p.join(' ')}).join('L')+'" class="as"/>';
       pts.forEach(function(p){b+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="3.5" class="w" stroke="var(--c)" stroke-width="2"/>'});
       b+=chip(60,206,56,'Stock','fl')+chip(124,214,64,'Facture')+chip(198,206,64,'Compta','fl')+chip(272,214,40,'RH');
-    }else if(id==='s-hebergement'){
-      for(i=0;i<3;i++){y=52+i*50;b+='<g class="sh"><rect x="60" y="'+y+'" width="170" height="40" rx="10" class="w"/><circle cx="78" cy="'+(y+20)+'" r="5" fill="#3DDC97"/><circle cx="94" cy="'+(y+20)+'" r="5" fill="'+(i===1?'#FFC857':'#3DDC97')+'"/>'+ln(112,y+12,70,'gl')+ln(112,y+23,44,'gl')+'<rect x="196" y="'+(y+14)+'" width="24" height="12" rx="6" class="a2"/></g>'}
-      b+='<path d="M230 72C262 72 262 88 292 90" class="as" stroke-dasharray="4 6" style="stroke-width:2.5"/><path d="M230 122C262 122 268 100 300 100" class="as" stroke-dasharray="4 6" style="stroke-width:2.5"/><path d="M230 172C270 172 280 112 312 106" class="as" stroke-dasharray="4 6" style="stroke-width:2.5"/>'+
-        '<g class="sh fl"><circle cx="292" cy="80" r="22" class="a"/><circle cx="322" cy="68" r="28" class="a"/><circle cx="352" cy="84" r="20" class="a"/><rect x="292" y="84" width="60" height="18" rx="9" class="a"/><path d="M308 86l8 8 16-18" class="ws"/></g>'+
-        '<g class="sh fl" style="animation-delay:-2s"><path d="M330 146l34 12v28c0 20-15 32-34 40-19-8-34-20-34-40v-28z" class="a"/><path d="M316 186l10 10 20-22" class="ws"/></g>';
     }else{
       b=fr(40,40,224,176)+'<rect x="130" y="72" width="122" height="26" rx="12" class="gl2"/>'+ln(142,82,80,'gl')+'<rect x="52" y="108" width="152" height="40" rx="12" class="a"/>'+ln(64,120,110,'wo')+ln(64,132,72,'wo2')+
         '<rect x="160" y="158" width="92" height="22" rx="11" class="gl2"/><rect x="52" y="188" width="46" height="20" rx="10" class="a3"/><circle cx="66" cy="198" r="3" class="a dotb"/><circle cx="76" cy="198" r="3" class="a dotb" style="animation-delay:.15s"/><circle cx="86" cy="198" r="3" class="a dotb" style="animation-delay:.3s"/>';
@@ -1013,17 +1069,27 @@ input,select,textarea{font-size:16px}
 
   /* ---------- Construction du DOM ---------- */
   function $(id){return document.getElementById(id)}
+  function serviceImage(id){
+    return ({
+      's-vitrine':'image/vitrine.png',
+      's-logiciel':'image/image.png',
+      's-mobile':'image/mobile.png',
+      's-crm':'image/crm2.png',
+      's-erp':'image/ERP.png'
+    })[id] || null;
+  }
   $('dd').innerHTML=S.map(function(s){return '<a href="#'+s.id+'" style="--c:'+s.c+'"><span class="di tint">'+ic(s.ic)+'</span>'+s.name+'</a>'}).join('');
   $('fsv').innerHTML=S.map(function(s){return '<li><a href="#'+s.id+'">'+s.name+'</a></li>'}).join('');
   $('pills').innerHTML=S.map(function(s){return '<a class="pill" style="--c:'+s.c+';text-decoration:none" href="#'+s.id+'">'+s.name+'</a>'}).join('');
   $('f-srv').innerHTML=S.map(function(s){return '<option>'+s.name+'</option>'}).join('');
   function mix(id,ids){$(id).innerHTML=ids.map(function(i){var s=byId[i];return '<a href="#'+s.id+'" style="--c:'+s.c+'">'+s.name+'</a>'}).join('')}
-  mix('mix1',['s-vitrine','s-hebergement','s-ia']);
+  mix('mix1',['s-vitrine']);
   mix('mix2',['s-erp','s-crm','s-logiciel']);
-  mix('mix3',['s-mobile','s-web','s-ia']);
+  mix('mix3',['s-mobile','s-logiciel']);
 
   $('track').innerHTML=S.map(function(s){
-    return '<a class="card" href="#'+s.id+'" draggable="false" style="--c:'+s.c+'"><div class="art">'+art(s.id)+'</div><div class="cbody"><h3>'+s.title+'</h3><p>'+s.short+'</p><ul class="tags">'+s.tags.map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul><span class="more">En savoir plus '+ARROW+'</span></div></a>';
+    var image=serviceImage(s.id);
+    return '<a class="card" href="#'+s.id+'" draggable="false" style="--c:'+s.c+'"><div class="art">'+(image?'<img src="'+image+'" alt="Illustration '+s.name+'">':art(s.id))+'</div><div class="cbody"><h3>'+s.title+'</h3><p>'+s.short+'</p><ul class="tags">'+s.tags.map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul><span class="more">En savoir plus '+ARROW+'</span></div></a>';
   }).join('');
 
   $('ogrid').innerHTML=S.map(function(s,i){
@@ -1036,23 +1102,118 @@ input,select,textarea{font-size:16px}
     '<div class="phead"><div class="blob b1" style="left:-140px;top:-170px;background:'+s.c+'"></div><div class="blob b2" style="right:-120px;top:-60px;background:'+s.c+';opacity:.22"></div><div class="wrap">'+
       '<div class="phead-grid"><div data-reveal="left"><div class="bigico">'+ic(s.ic)+'</div><h1>'+s.title+'</h1><p class="lead" style="font-weight:600;color:var(--fg);margin-bottom:12px">'+s.tag+'</p><p class="lead">'+s.intro+'</p>'+
       '<div class="cta-row"><a class="btn btn-c" href="#contact" data-svc="'+s.name+'">Demander un devis '+ARROW+'</a><a class="btn btn-ghost" href="#services">Tous les services</a></div></div>'+
-      '<div class="art big" data-reveal="right">'+art(s.id)+'</div></div>'+'<div class="gains">'+s.gains.map(function(g,k){return '<div class="gain" data-reveal style="--d:'+(k*.08)+'s">'+CHECK+'<span>'+g+'</span></div>'}).join('')+'</div>'+
+      '<div class="art big'+((s.id === 's-vitrine' || s.id === 's-erp' || s.id === 's-logiciel' || s.id === 's-mobile' || s.id === 's-crm') ? ' person-art' : '')+'" data-reveal="right">'+((s.id === 's-vitrine' || s.id === 's-erp' || s.id === 's-logiciel' || s.id === 's-mobile' || s.id === 's-crm') ? '<div class="person-orbit" aria-hidden="true"><span class="orbit orbit-a"></span><span class="orbit orbit-b"></span><span class="icon-bubble bubble-a">'+ic('web')+'</span><span class="icon-bubble bubble-b">'+ic('app')+'</span><span class="icon-bubble bubble-c">'+ic('mobile')+'</span><span class="icon-bubble bubble-d">'+ic('ai')+'</span><span class="icon-bubble bubble-e"><span class="ux-label">UI/UX</span></span></div><img src="'+(s.id === 's-vitrine' ? 'image/vitrine.png' : s.id === 's-erp' ? 'image/ERP.png' : s.id === 's-mobile' ? 'image/mobile.png' : s.id === 's-crm' ? 'image/crm2.png' : 'image/image.png')+'" alt="Aperçu '+s.name+'">' : art(s.id))+'</div></div>'+'<div class="gains">'+s.gains.map(function(g,k){return '<div class="gain" data-reveal style="--d:'+(k*.08)+'s">'+CHECK+'<span>'+g+'</span></div>'}).join('')+'</div>'+
     '</div></div>'+
     '<section class="sec"><div class="wrap"><div class="sec-head" data-reveal><span class="eyebrow">Ce que nous réalisons</span><h2>Le contenu de ce service, en détail.</h2></div><div class="fgrid">'+
       s.feats.map(function(f,k){return '<div class="feat" data-reveal style="--d:'+((k%3)*.08)+'s"><i></i><h3>'+f[0]+'</h3><p>'+f[1]+'</p></div>'}).join('')+'</div></div></section>'+
-    '<section class="sec alt"><div class="wrap two">'+
-      '<div class="panel" data-reveal="left"><h3>Pour qui ?</h3><ul class="checks">'+s.who.map(function(w){return '<li>'+CHECK+'<span>'+w+'</span></li>'}).join('')+'</ul></div>'+
-      '<div class="panel" data-reveal="right" style="--d:.08s"><h3>Ce que vous recevez</h3><ul class="checks">'+s.deliv.map(function(w){return '<li>'+CHECK+'<span>'+w+'</span></li>'}).join('')+'</ul></div>'+
+    '<section class="sec alt two-panel-bg"><div class="wrap"><div class=""><div class="two">'+
+      (s.id === 's-crm' ?
+        '<div class="panel" data-reveal="left"><h3>Pourquoi choisir un CRM sur mesure ?</h3><ul class="checks">'+[
+          '<li>'+CHECK+'<span><strong>Une interface intuitive</strong> : seulement les écrans et les champs utiles à votre <strong>équipe commerciale</strong>.</span></li>',
+          '<li>'+CHECK+'<span><strong>Un outil qui vous appartient</strong> : vous gardez la maîtrise de vos données, de vos évolutions et de votre budget.</span></li>',
+          '<li>'+CHECK+'<span><strong>Des fonctionnalités uniques</strong> : règles métier, calculs, validations et <strong>automatisation des flux de travail</strong> propres à votre activité.</span></li>',
+          '<li>'+CHECK+'<span><strong>Une intégration native avec votre ERP</strong>, votre facturation (QuickBooks, Sage), votre messagerie (Microsoft Outlook) et vos outils d’emailing (Mailchimp).</span></li>'
+        ].join('')+'</ul></div>'+
+        '<div class="panel" data-reveal="right" style="--d:.08s"><h3>Pour quelles entreprises ?</h3><ul class="checks">'+[
+          '<li>'+CHECK+'<span><strong>Petites entreprises et entreprises en croissance</strong> qui dépassent les limites d’un tableur.</span></li>',
+          '<li>'+CHECK+'<span>Structures <strong>B2B</strong> avec un <strong>cycle de vente</strong> long et des processus particuliers.</span></li>',
+          '<li>'+CHECK+'<span>Secteurs spécialisés : immobilier, santé, assurance, BTP, formation, commerce <strong>électronique</strong>.</span></li>',
+          '<li>'+CHECK+'<span>Équipes avec un <strong>service sur le terrain</strong> qui ont besoin d’un <strong>CRM mobile</strong>.</span></li>'
+        ].join('')+'</ul></div>' :
+        (s.id === 's-vitrine' ?
+          '<div class="panel" data-reveal="left"><h3>Pourquoi créer un site vitrine professionnel ?</h3><ul class="checks">'+[
+            '<li>'+CHECK+'<span><strong>Une présence en ligne crédible</strong> : votre <strong>site web</strong> rassure vos clients avant même le premier contact.</span></li>',
+            '<li>'+CHECK+'<span><strong>Une meilleure visibilité sur Google</strong> : un site optimisé <strong>SEO</strong> vous rend visible auprès des personnes qui cherchent vos services, près de chez vous.</span></li>',
+            '<li>'+CHECK+'<span><strong>Un outil disponible 24 h sur 24</strong> : vos services, vos coordonnées et votre <strong>formulaire de contact</strong> toujours accessibles.</span></li>',
+            '<li>'+CHECK+'<span><strong>Un site qui convertit</strong> : des <strong>appels à l’action</strong> clairs pour obtenir plus de <strong>demandes de devis</strong>.</span></li>',
+            '<li>'+CHECK+'<span><strong>Une image maîtrisée</strong> : votre <strong>charte graphique</strong>, votre <strong>logo</strong> et votre message partout cohérents.</span></li>'
+          ].join('')+'</ul></div>'+
+          '<div class="panel" data-reveal="right" style="--d:.08s"><h3>Pour quels professionnels ?</h3><ul class="checks">'+[
+            '<li>'+CHECK+'<span><strong>PME, artisans, commerçants et indépendants</strong> qui veulent être visibles localement.</span></li>',
+            '<li>'+CHECK+'<span><strong>Restaurants, coiffeurs, plombiers, électriciens, architectes, photographes.</strong></span></li>',
+            '<li>'+CHECK+'<span><strong>Professions libérales</strong> : avocats, médecins, thérapeutes, consultants.</span></li>',
+            '<li>'+CHECK+'<span><strong>Entreprises</strong> dont le site actuel est ancien et demande une refonte.</span></li>'
+          ].join('')+'</ul></div>' :
+          (s.id === 's-erp' ?
+          '<div class="panel" data-reveal="left"><h3>Pourquoi créer un ERP sur mesure ?</h3><ul class="checks">'+[
+            '<li>'+CHECK+'<span><strong>Un outil qui vous ressemble</strong> : vos écrans, vos règles et votre vocabulaire, sans fonctions inutiles.</span></li>',
+            '<li>'+CHECK+'<span><strong>Un gain de temps quotidien</strong> : fin de la double saisie et <strong>automatisation</strong> des tâches répétitives.</span></li>',
+            '<li>'+CHECK+'<span><strong>Une donnée unique et fiable</strong> : toutes vos équipes travaillent sur les mêmes informations.</span></li>',
+            '<li>'+CHECK+'<span><strong>Une solution évolutive</strong> : vous ajoutez des modules quand votre entreprise grandit.</span></li>',
+            '<li>'+CHECK+'<span><strong>La maîtrise de vos données</strong> et de vos évolutions, sans dépendre d’un éditeur.</span></li>'
+          ].join('')+'</ul></div>'+ 
+          '<div class="panel" data-reveal="right" style="--d:.08s"><h3>Pour quelles entreprises ?</h3><ul class="checks">'+[
+            '<li>'+CHECK+'<span><strong>PME</strong> et <strong>entreprises en croissance</strong> qui dépassent les limites des tableurs et des logiciels séparés.</span></li>',
+            '<li>'+CHECK+'<span>Industrie, BTP, commerce, distribution, logistique, agroalimentaire.</span></li>',
+            '<li>'+CHECK+'<span>Entreprises dont le logiciel actuel est trop rigide, trop complexe ou ne correspond plus à leur activité.</span></li>',
+            '<li>'+CHECK+'<span>Structures qui souhaitent la <strong>digitalisation</strong> de leurs processus.</span></li>'
+          ].join('')+'</ul></div>' :
+          '<div class="panel" data-reveal="left"><h3>Pour qui ?</h3><ul class="checks">'+s.who.map(function(w){return '<li>'+CHECK+'<span>'+w+'</span></li>'}).join('')+'</ul></div>'+ 
+          '<div class="panel" data-reveal="right" style="--d:.08s"><h3>Pour quels projets ?</h3><ul class="checks">'+[
+            '<li>'+CHECK+'<span><strong>Start-ups</strong> qui lancent un MVP ou un produit <strong>SaaS</strong>.</span></li>',
+            '<li>'+CHECK+'<span>Entreprises qui veulent un <strong>tableau de bord</strong>, un portail client ou un outil interne sur mesure.</span></li>',
+            '<li>'+CHECK+'<span>Plateformes de réservation, de <strong>commerce électronique</strong>, de formation, de gestion ou de suivi.</span></li>',
+            '<li>'+CHECK+'<span>Applications existantes à moderniser, à migrer ou à rendre <strong>évolutives</strong>.</span></li>'
+          ].join('')+'</ul></div>')))+
+    '</div></div></section>'+
+    (s.id === 's-vitrine' || s.id === 's-logiciel' || s.id === 's-mobile' || s.id === 's-crm' || s.id === 's-erp' ? '<section class="sec alt"><div class="wrap"><div class="sec-head" data-reveal><span class="eyebrow">Processus</span><h2>' + (s.id === 's-crm' ? 'Les étapes de création de votre CRM sur mesure' : (s.id === 's-erp' ? 'Les étapes de développement de votre ERP sur mesure' : (s.id === 's-mobile' ? 'Les étapes de développement de votre application mobile' : (s.id === 's-vitrine' ? 'Les étapes de création de votre site vitrine' : 'Les étapes de développement de votre application web')))) + '</h2></div><div class="steps">'+
+      (s.id === 's-crm' ? [
+        ["Audit et cahier des charges","Nous étudions vos <strong>besoins de l'entreprise</strong>, votre <strong>processus de vente</strong> et vos outils actuels, puis nous définissons ensemble les fonctionnalités et les priorités."],
+        ["Maquettes et design UX/UI","Vous validez l'ergonomie avant tout développement."],
+        ["Développement agile","Livraison par étapes, avec des démonstrations régulières."],
+        ["Intégration, migration et tests","Reprise de votre <strong>base de données CRM</strong>, connexion à vos outils, puis vérification de la qualité, de la sécurité et des performances."],
+        ["Déploiement, formation et maintenance","Mise en production <strong>basée sur le cloud</strong>, formation de vos équipes, puis support et évolutions selon vos besoins."]
+      ] : (s.id === 's-erp' ? [
+        ["Audit et cahier des charges","Nous analysons vos <strong>processus métier</strong>, vos outils actuels et vos priorités."],
+        ["Maquettes et design UX/UI","Vous validez l'ergonomie et les écrans avant tout développement."],
+        ["Développement agile","Livraison module par module, avec des démonstrations régulières."],
+        ["Intégration, migration et tests","Reprise de vos données, connexion à vos outils, puis vérification de la qualité et de la sécurité."],
+        ["Déploiement, formation et maintenance","Mise en production, formation de vos équipes, puis support et évolutions."]
+      ] : (s.id === 's-vitrine' ? [
+        ["Cadrage et cahier des charges","Nous définissons vos objectifs, votre cible, vos pages et vos messages clés."],
+        ["Maquette et design","Vous validez le design et la <strong>charte graphique</strong> avant le développement."],
+        ["Développement et intégration","Création du site, <strong>responsive</strong>, rapide et optimisé pour le <strong>SEO</strong>."],
+        ["Contenus et tests","Mise en place des textes, des images, vérification sur mobile, tablette et ordinateur."],
+        ["Mise en ligne et suivi","Publication, formation à la gestion du site, <strong>maintenance</strong> et <strong>mises à jour</strong>."]
+      ] : [
+        ["Idée et cahier des charges","Nous cadrons vos objectifs, vos utilisateurs et vos fonctionnalités prioritaires."],
+        ["Conception UX/UI et prototype","Maquettes, conception web et prototype cliquable que vous validez avant le code."],
+        ["Développement agile","<strong>Front-end</strong> et <strong>back-end</strong> livrés par étapes, avec des démonstrations régulières."],
+        ["Tests et débogage","Vérification de la <strong>compatibilité</strong> des navigateurs, de la sécurité et des performances."],
+        ["Déploiement et maintenance","Mise en ligne sur le <strong>cloud</strong>, suivi, mises à jour et nouvelles fonctionnalités."]
+      ])))
+    .map(function(t,k){return '<div class="step" data-reveal style="--d:'+(k*.08)+'s"><div class="dot">'+(k+1)+'</div><h3>'+t[0]+'</h3><p>'+t[1]+'</p></div>'}).join('')+'</div></div></section>' : '') +
+    '<section class="sec"><div class="wrap"><div class="sec-head" data-reveal><span class="eyebrow">Technologies</span><h2>' + (s.id === 's-crm' ? 'Les technologies que nous utilisons' : 'Les technologies que nous utilisons.') + '</h2></div>' + (s.id === 's-logiciel' || s.id === 's-mobile' ? '<div class="tgrid" data-reveal><div class="tcard" style="--c:#2563EB"><h3>'+ic('web')+'Front-end</h3><p class="tech-line"><strong>HTML5</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>Angular</strong>, <strong>Bootstrap</strong>, <strong>Flexbox</strong>, <strong>jQuery</strong></p></div><div class="tcard" style="--c:#4F46E5"><h3>'+ic('layers')+'Back-end</h3><p class="tech-line"><strong>Node.js</strong>, <strong>PHP</strong>, <strong>Django</strong>, <strong>Ruby on Rails</strong>, architecture <strong>MVC</strong>, <strong>microservices</strong></p></div><div class="tcard" style="--c:#D97706"><h3>'+ic('db')+'Bases de données</h3><p class="tech-line"><strong>MySQL</strong>, <strong>PostgreSQL</strong>, <strong>MongoDB</strong>, <strong>Firebase</strong></p></div><div class="tcard" style="--c:#7C3AED"><h3>'+ic('host')+'Déploiement et DevOps</h3><p class="tech-line"><strong>Docker</strong>, <strong>AWS</strong>, <strong>Nginx</strong>, <strong>Git</strong>, <strong>GitLab</strong>, <strong>contrôle de version</strong>, <strong>SSL</strong></p></div><div class="tcard" style="--c:#059669"><h3>'+ic('mobile')+'Mobile</h3><p class="tech-line"><strong>React Native</strong>, <strong>Ionic</strong>, <strong>PhoneGap</strong> pour prolonger votre application sur <strong>Android</strong> et iOS</p></div></div>' : (s.id === 's-vitrine' || s.id === 's-erp' ? '<div class="tgrid" data-reveal></div>' : (s.id === 's-crm' ? '<div class="tgrid" data-reveal><div class="tcard" style="--c:#2563EB"><h3>'+ic('web')+'Front-end</h3><p class="tech-line"><strong>React</strong> pour une interface moderne, fluide et réactive</p></div><div class="tcard" style="--c:#4F46E5"><h3>'+ic('layers')+'Back-end</h3><p class="tech-line"><strong>Laravel</strong>, <strong>Symfony</strong>, <strong>Node.js</strong> et <strong>API REST</strong> pour la logique métier, la sécurité et les intégrations</p></div><div class="tcard" style="--c:#D97706"><h3>'+ic('db')+'Bases de données</h3><p class="tech-line"><strong>PostgreSQL</strong> pour des données client fiables et performantes</p></div></div>' : '<div class="chips" data-reveal>'+s.tech.map(function(t){return '<span>'+t+'</span>'}).join(' ')+'</div>'))) + '</div></section>'+
+    '<section class="sec"><div class="wrap"><div class="sec-head" data-reveal><span class="eyebrow">FAQ</span><h2>Ce que l\'on nous demande souvent.</h2></div>' +
+      (s.id === 's-logiciel' || s.id === 's-mobile' || s.id === 's-crm' || s.id === 's-vitrine' || s.id === 's-erp' ? '<div class="faqs faq-grid">'+s.faq.map(function(q){return '<div class="faq-item faq-card" data-reveal><button class="faq-question" type="button" aria-expanded="false"><span>'+q[0]+'</span><span class="faq-icon">✓</span></button><div class="faq-answer"><p>'+q[1]+'</p></div></div>'}).join('')+'</div>' : '<div class="faqs">'+s.faq.map(function(q){return '<details class="faq" data-reveal><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'}).join('')+'</div>') +
     '</div></section>'+
-    '<section class="sec"><div class="wrap"><div class="sec-head" data-reveal><span class="eyebrow">Technologies</span><h2>Les outils que nous utilisons.</h2></div><div class="chips" data-reveal>'+s.tech.map(function(t){return '<span>'+t+'</span>'}).join('')+'</div></div></section>'+
-    '<section class="sec alt"><div class="wrap"><div class="sec-head" data-reveal><span class="eyebrow">Comment nous travaillons</span><h2>Quatre étapes, un point de validation à chacune.</h2></div><div class="steps">'+
-      STEPS.map(function(t,k){return '<div class="step" data-reveal style="--d:'+(k*.08)+'s"><div class="dot">'+(k+1)+'</div><h3>'+t[0]+'</h3><p>'+t[1]+'</p></div>'}).join('')+'</div></div></section>'+
-    '<section class="sec"><div class="wrap"><div class="sec-head" data-reveal><span class="eyebrow">Questions fréquentes</span><h2>Ce que l\'on nous demande souvent.</h2></div><div class="faqs">'+
-      s.faq.map(function(q){return '<details class="faq" data-reveal><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'}).join('')+'</div></div></section>'+
     '<section class="sec" style="padding-top:0"><div class="wrap"><div class="ctaband" data-reveal style="--c:'+s.c+'"><div><h2>Un projet de '+s.name.toLowerCase()+' ?</h2><p>Parlez-nous de votre besoin. Nous vous répondons avec une proposition claire et un calendrier.</p></div><a class="btn" href="#contact" data-svc="'+s.name+'">Demander un devis '+ARROW+'</a></div>'+
       '<div class="pn"><a href="#'+p.id+'" style="--c:'+p.c+'"><span>←</span><div><small>Précédent</small>'+p.name+'</div></a><a href="#'+n.id+'" style="--c:'+n.c+'"><div style="text-align:right"><small>Suivant</small>'+n.name+'</div><span>→</span></a></div></div></section>'+
     '</div>';
   }).join('');
+
+  var mobileTech=document.querySelector('[data-route="s-mobile"] .tgrid');
+  if(mobileTech){
+    mobileTech.innerHTML='<div class="tcard" style="--c:#2563EB"><h3>'+ic('mobile')+'Android</h3><p class="tech-line"><strong>Kotlin</strong>, <strong>Android Studio</strong>, <strong>Jetpack Compose</strong>, <strong>Firebase</strong> et notifications push.</p></div>'+
+      '<div class="tcard" style="--c:#111827"><h3>'+ic('mobile')+'iOS</h3><p class="tech-line"><strong>Swift</strong>, <strong>SwiftUI</strong>, <strong>Xcode</strong>, <strong>TestFlight</strong> et publication sur l’App Store.</p></div>'+
+      '<div class="tcard" style="--c:#059669"><h3>'+ic('layers')+'Multiplateforme</h3><p class="tech-line"><strong>Flutter</strong>, <strong>React Native</strong> et <strong>Ionic</strong> pour partager une base de code entre Android et iOS.</p></div>'+
+      '<div class="tcard" style="--c:#D97706"><h3>'+ic('host')+'Publication et tests</h3><p class="tech-line"><strong>Google Play</strong>, <strong>App Store</strong>, tests sur appareils réels, mises à jour et suivi des versions.</p></div>';
+  }
+
+  var vitrineTech=document.querySelector('[data-route="s-vitrine"] .tgrid');
+  if(vitrineTech){
+    vitrineTech.innerHTML='<div class="tcard" style="--c:#2563EB"><h3>'+ic('web')+'Structure et interface</h3><p class="tech-line"><strong>HTML5</strong>, <strong>CSS</strong> et <strong>JavaScript</strong> pour une base rapide, accessible et responsive.</p></div>'+
+      '<div class="tcard" style="--c:#4F46E5"><h3>'+ic('layers')+'Frameworks</h3><p class="tech-line"><strong>React</strong> et <strong>Laravel</strong> pour construire des sites modernes, évolutifs et faciles à maintenir.</p></div>'+
+      '<div class="tcard" style="--c:#D97706"><h3>'+ic('site')+'CMS</h3><p class="tech-line"><strong>WordPress</strong> pour gérer simplement vos contenus, vos pages et vos actualités.</p></div>'+
+      '<div class="tcard" style="--c:#059669"><h3>'+ic('web')+'Design et responsive</h3><p class="tech-line"><strong>Tailwind CSS</strong> pour une interface soignée, cohérente et adaptée à tous les écrans.</p></div>';
+  }
+
+  var erpTech=document.querySelector('[data-route="s-erp"] .tgrid');
+  if(erpTech){
+    erpTech.innerHTML='<div class="tcard" style="--c:#2563EB"><h3>'+ic('web')+'Front-end</h3><p class="tech-line"><strong>React</strong> pour une interface moderne, fluide et réactive.</p></div>'+
+      '<div class="tcard" style="--c:#4F46E5"><h3>'+ic('layers')+'Back-end</h3><p class="tech-line"><strong>Laravel</strong>, <strong>Node.js</strong> et <strong>API REST</strong> pour la logique métier, la sécurité et les intégrations avec vos outils.</p></div>'+
+      '<div class="tcard" style="--c:#D97706"><h3>'+ic('db')+'Bases de données</h3><p class="tech-line"><strong>PostgreSQL</strong> pour des données fiables, performantes et adaptées aux gros volumes.</p></div>';
+  }
 
   var M=[
     ["Cadrage","#2563EB","Nous prenons le temps de comprendre votre activité, vos clients et ce que vous voulez accomplir. Cette étape évite les mauvaises surprises plus tard.",["Entretien avec vous et vos équipes","Analyse de l'existant et des contraintes","Définition des objectifs et des priorités","Choix du périmètre de départ"],["Un compte rendu de cadrage","Une liste de fonctions priorisées","Un premier calendrier"]],
@@ -1066,15 +1227,15 @@ input,select,textarea{font-size:16px}
   }).join('');
 
   var T=[
-    ["Front-end","#2563EB","web","Les interfaces que vos utilisateurs voient et manipulent : rapides, accessibles et adaptées à tous les écrans.",["React","Vue.js","HTML / CSS / JS","Tailwind CSS"]],
-    ["Back-end","#4F46E5","layers","Le moteur de vos applications : logique métier, comptes, sécurité et échanges avec les autres systèmes.",["Node.js","Laravel","Python","API REST"]],
-    ["Mobile","#059669","mobile","Des applications Android et iOS, en développement multiplateforme ou natif selon le besoin.",["Flutter","React Native","Kotlin","Swift"]],
-    ["Données","#D97706","db","Le stockage fiable de vos informations, avec des sauvegardes et des accès contrôlés.",["PostgreSQL","MySQL","MongoDB","Redis"]],
-    ["Infrastructure","#7C3AED","host","L'environnement qui fait tourner vos projets : serveurs, déploiement et surveillance.",["Linux","Docker","Nginx","SSL / TLS"]],
-    ["Intelligence artificielle","#0D9488","ai","Des assistants et des automatisations qui s'appuient sur des modèles de langage et vos données.",["Modèles de langage","Chatbots","Automatisation de flux","Analyse de documents"]]
+    ["Front-end","#2563EB","web","<strong>HTML5</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>React</strong>, <strong>Angular</strong>, <strong>Bootstrap</strong>, <strong>Flexbox</strong>, <strong>jQuery</strong>"],
+    ["Back-end","#4F46E5","layers","<strong>Node.js</strong>, <strong>PHP</strong>, <strong>Python</strong>, <strong>Ruby on Rails</strong>, architecture <strong>MVC</strong>, <strong>microservices</strong>"],
+    ["Frameworks","#0891B2","layers","<strong>Laravel</strong>, <strong>Symfony</strong>, <strong>Django</strong> pour développer des applications robustes et évolutives"],
+    ["Bases de données","#D97706","db","<strong>MySQL</strong>, <strong>PostgreSQL</strong>, <strong>MongoDB</strong>, <strong>Firebase</strong>"],
+    ["Déploiement et DevOps","#7C3AED","host","<strong>Docker</strong>, <strong>AWS</strong>, <strong>Nginx</strong>, <strong>Git</strong>, <strong>GitLab</strong>, <strong>contrôle de version</strong>, <strong>SSL</strong>"],
+    ["Mobile","#059669","mobile","<strong>Java</strong>, <strong>Kotlin</strong>, <strong>Flutter</strong>, <strong>React Native</strong>, <strong>Ionic</strong> et <strong>PhoneGap</strong> pour développer vos applications <strong>Android</strong> et iOS"]
   ];
   $('tgrid').innerHTML=T.map(function(t,i){
-    return '<div class="tcard" data-reveal style="--c:'+t[1]+';--d:'+((i%3)*.08)+'s"><h3>'+ic(t[2])+t[0]+'</h3><p>'+t[3]+'</p><div class="chips">'+t[4].map(function(x){return '<span>'+x+'</span>'}).join('')+'</div></div>';
+    return '<div class="tcard" data-reveal style="--c:'+t[1]+';--d:'+((i%3)*.08)+'s"><h3>'+ic(t[2])+t[0]+'</h3><p class="tech-line">'+t[3]+'</p></div>';
   }).join('');
 
   /* Directions des animations gauche / droite */
@@ -1091,6 +1252,32 @@ input,select,textarea{font-size:16px}
   [].slice.call(document.querySelectorAll('.hero-grid .stack,.show .stage')).forEach(function(el){el.setAttribute('data-reveal','right')});
   [].slice.call(document.querySelectorAll('.contact>div:first-child [data-reveal]')).forEach(function(el){el.setAttribute('data-reveal','left')});
   $('form').setAttribute('data-reveal','right');
+
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn=item.querySelector('.faq-question');
+    var answer=item.querySelector('.faq-answer');
+    if(!btn||!answer)return;
+    function setOpen(open){
+      item.classList.toggle('open',open);
+      btn.setAttribute('aria-expanded',open ? 'true' : 'false');
+      answer.style.maxHeight = open ? (answer.scrollHeight + 10) + 'px' : '0px';
+    }
+    btn.addEventListener('click',function(){
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(card){
+        if(card !== item){
+          card.classList.remove('open');
+          var otherBtn=card.querySelector('.faq-question');
+          var otherAnswer=card.querySelector('.faq-answer');
+          if(otherBtn)otherBtn.setAttribute('aria-expanded','false');
+          if(otherAnswer)otherAnswer.style.maxHeight='0px';
+        }
+      });
+      setOpen(!isOpen);
+      item.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+    setOpen(false);
+  });
 
   /* ---------- Révélation au défilement ---------- */
   var io=null,rvOn=false;
@@ -1122,7 +1309,14 @@ input,select,textarea{font-size:16px}
   track.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;down=true;moved=false;sx=e.clientX;sl=track.scrollLeft});
   window.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>5){moved=true;track.classList.add('drag')}if(moved)track.scrollLeft=sl-dx});
   window.addEventListener('pointerup',function(){if(!down)return;down=false;track.classList.remove('drag');setTimeout(function(){moved=false},0)});
-  [].slice.call(track.querySelectorAll('.card')).forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+  [].slice.call(track.querySelectorAll('.card')).forEach(function(c){
+    c.addEventListener('mousemove',function(e){
+      var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');
+      c.style.setProperty('--tilt-x',(x*3).toFixed(2)+'deg');c.style.setProperty('--tilt-y',(-y*3).toFixed(2)+'deg');
+    });
+    c.addEventListener('mouseleave',function(){c.style.setProperty('--tilt-x','0deg');c.style.setProperty('--tilt-y','0deg')});
+  });
 
   /* ---------- Réseau animé (accueil) ---------- */
   var cv=$('net'),ctx=cv.getContext('2d'),pts=[],W=0,H=0,raf=0,netOn=false;
@@ -1238,11 +1432,11 @@ input,select,textarea{font-size:16px}
   })});
   var status=$('status');
   $('form').addEventListener('submit',function(e){
-    var nom=$('f-nom').value.trim(),mail=$('f-mail').value.trim(),srv=$('f-srv').value,msg=$('f-msg').value.trim();
-    if(!nom||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)||!msg){
+    var nom=$('f-nom').value.trim(),mail=$('f-mail').value.trim(),tel=$('f-tel').value.trim(),srv=$('f-srv').value,msg=$('f-msg').value.trim();
+    if(!nom||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)||!tel||!srv||!msg){
       e.preventDefault();
       status.className='status err';
-      status.textContent='Renseignez votre nom, un e-mail valide et la description de votre projet.';
+      status.textContent='Renseignez tous les champs obligatoires avec des informations valides.';
       return;
     }
     status.className='status';

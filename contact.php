@@ -1,5 +1,5 @@
 <?php
-$to = 'contact@teknova.mg';
+$to = 'contact@teknova-sarl.com';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: TeknovaSarl.html');
@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $nom = trim($_POST['nom'] ?? '');
 $email = trim($_POST['email'] ?? '');
+$telephone = trim($_POST['telephone'] ?? '');
 $service = trim($_POST['service'] ?? 'Non précisé');
 $message = trim($_POST['message'] ?? '');
 $errors = [];
@@ -18,6 +19,10 @@ if ($nom === '') {
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = 'Votre e-mail est invalide.';
+}
+
+if ($telephone === '') {
+    $errors[] = 'Votre numéro de téléphone est requis.';
 }
 
 if ($message === '') {
@@ -111,6 +116,7 @@ $subject = 'Nouvelle demande de devis Teknova';
 $body = "Bonjour,\n\n" .
     "Nom : $nom\n" .
     "E-mail : $email\n" .
+    "Téléphone : $telephone\n" .
     "Service souhaité : $service\n\n" .
     "Projet :\n$message\n";
 
@@ -130,7 +136,7 @@ if ($sent) {
 } else {
     $messageContent = '
       <h1>Le message n’a pas pu être envoyé</h1>
-      <p>Il y a eu un problème temporaire lors de l’envoi de votre demande. Merci de réessayer plus tard ou de nous écrire directement à contact@teknova.mg.</p>
+      <p>Il y a eu un problème temporaire lors de l’envoi de votre demande. Merci de réessayer plus tard ou de nous écrire directement à contact@teknova-sarl.com.</p>
       <p><a class="button" href="TeknovaSarl.html#contact">Réessayer</a></p>
     ';
     renderPage('Erreur d’envoi - Teknova', $messageContent);
