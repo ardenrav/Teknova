@@ -12,7 +12,8 @@
 </head><body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="preload" as="image" href="image/crm.jpg" fetchpriority="high">
 <style>
 /* Concept : site d'agence en thème clair unique. Une page par menu (routes #), une couleur par service, hero avec réseau animé, slider horizontal et slides en fondu. */
@@ -1114,11 +1115,11 @@ input,select,textarea{font-size:16px}
   function $(id){return document.getElementById(id)}
   function serviceImage(id){
     return ({
-      's-vitrine':'image/vitrine.webp',
-      's-logiciel':'image/image.webp',
-      's-mobile':'image/mobile.webp',
-      's-crm':'image/crm2.webp',
-      's-erp':'image/ERP.webp'
+      's-vitrine':'image/vitrine-card.webp',
+      's-logiciel':'image/image-card.webp',
+      's-mobile':'image/mobile-card.webp',
+      's-crm':'image/crm2-card.webp',
+      's-erp':'image/ERP-card.webp'
     })[id] || null;
   }
   $('dd').innerHTML=S.map(function(s){return '<a href="#'+s.id+'" style="--c:'+s.c+'"><span class="di tint">'+ic(s.ic)+'</span>'+s.name+'</a>'}).join('');
@@ -1340,11 +1341,19 @@ input,select,textarea{font-size:16px}
   }
 
   /* ---------- Slider des services ---------- */
-  var track=$('track'),prev=$('prev'),next=$('next'),bar=$('bar'),moved=false;
+  var track=$('track'),prev=$('prev'),next=$('next'),bar=$('bar'),moved=false,updFrame=0;
   function step(){var c=track.querySelector('.card');return c?c.offsetWidth+20:300}
-  function upd(){if(!track.scrollWidth||!track.clientWidth)return;var m=track.scrollWidth-track.clientWidth;
-    bar.style.width=Math.min(100,(track.scrollLeft+track.clientWidth)/track.scrollWidth*100)+'%';
-    prev.disabled=track.scrollLeft<4;next.disabled=track.scrollLeft>m-4}
+  function upd(){
+    if(updFrame)return;
+    updFrame=requestAnimationFrame(function(){
+      updFrame=0;
+      var width=track.clientWidth,total=track.scrollWidth,left=track.scrollLeft;
+      if(!total||!width)return;
+      var m=total-width;
+      bar.style.width=Math.min(100,(left+width)/total*100)+'%';
+      prev.disabled=left<4;next.disabled=left>m-4;
+    });
+  }
   prev.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'})});
   next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'})});
   track.addEventListener('scroll',upd,{passive:true});
@@ -1385,10 +1394,13 @@ input,select,textarea{font-size:16px}
   function sgo(i){
     cur=(i+tabs.length)%tabs.length;
     tabs.forEach(function(t){t.setAttribute('aria-selected','false')});
-    void showEl.offsetWidth;
-    tabs[cur].style.setProperty('--dur',DUR+'ms');
-    tabs[cur].setAttribute('aria-selected','true');
-    slides.forEach(function(s,k){s.classList.toggle('on',k===cur)});
+    var index=cur,tab=tabs[index];
+    requestAnimationFrame(function(){
+      if(index!==cur)return;
+      tab.style.setProperty('--dur',DUR+'ms');
+      tab.setAttribute('aria-selected','true');
+      slides.forEach(function(s,k){s.classList.toggle('on',k===index)});
+    });
     if(!reduce)srestart();
   }
   tabs.forEach(function(t,k){t.addEventListener('click',function(){sgo(k)})});
