@@ -1,5 +1,11 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<!doctype html><html lang="fr"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <title>Teknova Sarl | CRM, applications web & mobile sur mesure</title>
+<meta name="description" content="Teknova Sarl conçoit des CRM, applications web, applications mobiles et sites vitrines sur mesure pour les entreprises à Madagascar et à distance.">
+<link rel="canonical" href="https://teknova-sarl.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Teknova Sarl | Solutions digitales sur mesure">
+<meta property="og:description" content="CRM, applications web, applications mobiles et sites vitrines conçus sur mesure par Teknova Sarl.">
+<meta property="og:url" content="https://teknova-sarl.com/">
 <link rel="icon" type="image/svg+xml" href="image/favicon.svg">
 <link rel="shortcut icon" href="image/favicon.svg">
 <meta name="theme-color" content="#ff7410">
@@ -7,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" as="image" href="image/crm.jpg" fetchpriority="high">
 <style>
 /* Concept : site d'agence en thème clair unique. Une page par menu (routes #), une couleur par service, hero avec réseau animé, slider horizontal et slides en fondu. */
 :root{
@@ -44,7 +51,7 @@ button{font:inherit;color:inherit}
 ul{margin:0;padding:0;list-style:none}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 .wrap{width:min(1180px,100% - 32px);margin-inline:auto}
-.eyebrow{font-family:var(--font-mono);font-size:.9rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c,var(--accent));display:inline-flex;align-items:center;gap:.6rem}
+.eyebrow{font-family:var(--font-mono);font-size:.9rem;letter-spacing:.14em;text-transform:uppercase;color:color-mix(in srgb,var(--c,var(--accent)) 76%,#000);display:inline-flex;align-items:center;gap:.6rem}
 .eyebrow::before{content:"";width:28px;height:2px;background:var(--c,var(--accent));border-radius:2px}
 .grad{background:linear-gradient(95deg,var(--blue),var(--amber) 52%,var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
 .tint{background:color-mix(in srgb,var(--c) 11%,#fff)}
@@ -68,7 +75,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;backgroun
 nav.main{display:flex;align-items:center;gap:6px}
 nav.main>a,nav.main .has-dd>a{text-decoration:none;font-weight:600;font-size:.92rem;color:var(--muted);padding:9px 14px;border-radius:10px;transition:color .25s,background .25s;display:inline-block}
 nav.main>a:hover,nav.main .has-dd>a:hover{color:var(--fg);background:var(--bg-alt)}
-nav.main a.active{color:var(--blue);background:color-mix(in srgb,var(--blue) 10%,#fff)}
+nav.main a.active{color:color-mix(in srgb,var(--blue) 72%,#000);background:color-mix(in srgb,var(--blue) 10%,#fff)}
 .has-dd{position:relative}
 .has-dd::after{content:"";position:absolute;left:0;right:0;top:100%;height:16px}
 .dd{position:absolute;top:calc(100% + 10px);left:50%;translate:-30% 0;width:min(600px,92vw);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:12px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:4px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility 0s .3s}
@@ -87,13 +94,17 @@ nav.main a.active{color:var(--blue);background:color-mix(in srgb,var(--blue) 10%
 .menu-btn svg{transition:transform .28s var(--ease)}
 .menu-btn[aria-expanded="true"] svg{transform:rotate(90deg)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:.85rem 1.4rem;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s,background .3s}
-.btn-primary{background:linear-gradient(135deg,var(--blue),var(--indigo));color:#fff;box-shadow:0 16px 32px -18px var(--blue)}
+.btn-primary{background:linear-gradient(135deg,color-mix(in srgb,var(--blue) 78%,#000),color-mix(in srgb,var(--indigo) 78%,#000));color:#fff;box-shadow:0 16px 32px -18px var(--blue)}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 42px -18px var(--blue)}
+.btn-appointment{background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(135deg,#2563EB,#06B6D4) border-box;border:1.5px solid transparent;color:#1D4ED8;box-shadow:0 10px 24px -18px #2563EB}
+.btn-appointment:hover{background:linear-gradient(135deg,#2563EB,#06B6D4) padding-box,linear-gradient(135deg,#1D4ED8,#0891B2) border-box;color:#fff;transform:translateY(-3px);box-shadow:0 18px 32px -16px #2563EB}
+.btn-appointment svg{width:15px;height:15px;stroke-width:2.2}
+.appointment-short{display:none}
 .btn-ghost{background:var(--surface);border-color:var(--line);color:var(--fg)}
 .btn-ghost:hover{border-color:var(--accent);transform:translateY(-3px)}
 .btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s var(--ease)}
 .btn:hover svg{transform:translateX(4px)}
-.btn-c{background:var(--c);color:#fff;box-shadow:0 12px 28px -12px var(--c)}
+.btn-c{background:linear-gradient(135deg,color-mix(in srgb,var(--c) 78%,#000),color-mix(in srgb,var(--c) 62%,#000));color:#fff;box-shadow:0 12px 28px -12px var(--c)}
 .btn-c:hover{transform:translateY(-3px);box-shadow:0 20px 36px -14px var(--c)}
 
 /* Hero accueil */
@@ -148,7 +159,7 @@ section.sec{padding-block:clamp(60px,8vw,104px)}
 .gain{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
 .gain svg{width:40px;height:40px;padding:10px;border-radius:12px;stroke:var(--c);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;background:color-mix(in srgb,var(--c) 12%,#fff)}
 .gain span{color:var(--fg);font-weight:600;font-size:.96rem;line-height:1.45}
-.bigico{width:68px;height:68px;border-radius:20px;display:grid;place-items:center;color:#fff;background:var(--c);box-shadow:0 18px 36px -16px var(--c);position:relative}
+.bigico{width:68px;height:68px;border-radius:20px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,color-mix(in srgb,var(--c) 78%,#000),color-mix(in srgb,var(--c) 62%,#000));box-shadow:0 18px 36px -16px var(--c);position:relative}
 .bigico svg{width:34px;height:34px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 
 /* Cartes service */
@@ -170,7 +181,7 @@ section.sec{padding-block:clamp(60px,8vw,104px)}
 .card p{color:var(--muted);font-size:.95rem;position:relative}
 .tags{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);display:flex;flex-wrap:wrap;gap:6px;position:relative}
 .tags li{font-family:var(--font-mono);font-size:.7rem;padding:4px 9px;border-radius:7px;background:color-mix(in srgb,var(--c) 9%,#fff);color:color-mix(in srgb,var(--c) 80%,#000)}
-.more{font-weight:700;font-size:.9rem;color:var(--c);display:inline-flex;gap:8px;align-items:center;position:relative}
+.more{font-weight:700;font-size:.9rem;color:color-mix(in srgb,var(--c) 72%,#000);display:inline-flex;gap:8px;align-items:center;position:relative}
 .more svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s var(--ease)}
 .card:hover .more svg,.ocard:hover .more svg{transform:translateX(5px)}
 .prog{height:3px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:6px}
@@ -189,10 +200,10 @@ section.sec{padding-block:clamp(60px,8vw,104px)}
 .ocard .art::before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,color-mix(in srgb,var(--c) 8%,transparent),transparent 62%);z-index:1;pointer-events:none}
 .ocard .art::after{content:"";position:absolute;z-index:2;left:13%;top:12%;width:74%;height:76%;border-radius:50%;background:radial-gradient(ellipse,color-mix(in srgb,var(--c) 38%,transparent),transparent 68%);filter:blur(22px);opacity:.5;transform:scale(.9);transition:opacity .6s var(--ease),transform .7s var(--ease)}
 .ocard .art img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;position:relative;z-index:3;filter:drop-shadow(0 14px 16px color-mix(in srgb,var(--c) 32%,transparent)) saturate(.94) contrast(1.02);transform:scale(1.01);transition:transform .7s var(--ease),filter .5s ease}
-.ocard .art img[src*="image/image.png"]{transform:scale(1.1);object-position:center 52%}
+.ocard .art img[src*="image/image."]{transform:scale(1.1);object-position:center 52%}
 .ocard:hover .art::after{opacity:.78;transform:scale(1.08)}
 .ocard:hover .art img{transform:scale(1.05) translateY(-2px);filter:drop-shadow(0 18px 20px color-mix(in srgb,var(--c) 48%,transparent)) saturate(1.04) contrast(1.04)}
-.ocard:hover .art img[src*="image/image.png"]{transform:scale(1.14) translateY(-2px)}
+.ocard:hover .art img[src*="image/image."]{transform:scale(1.14) translateY(-2px)}
 .art-deco{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
 .art-deco .deco-ring{position:absolute;left:50%;top:50%;width:78%;height:115%;border:1px solid color-mix(in srgb,var(--c) 28%,#fff);border-radius:50%;transform:translate(-50%,-50%) rotate(-16deg);opacity:.7;animation:serviceRing 12s linear infinite}
 .art-deco .deco-ring::after{content:"";position:absolute;inset:14% -8%;border:1px solid color-mix(in srgb,var(--c) 18%,#fff);border-radius:50%;transform:rotate(35deg)}
@@ -219,7 +230,7 @@ section.sec{padding-block:clamp(60px,8vw,104px)}
 .feat h3{font-size:1.06rem}
 .feat p{color:var(--muted);font-size:.93rem}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:100%}
-.two-panel-bg{background-color:#c76d57;background-image:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.12)),url('image/entreprise.png');background-size:cover;background-position:center center;background-repeat:no-repeat;padding:18px;border:1px solid rgba(15,23,42,.06);box-shadow:0 24px 40px -28px rgba(15,23,42,.18);min-height:420px;display:block;overflow:hidden;width:100%;max-width:100%}
+.two-panel-bg{background-color:#c76d57;background-image:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.12)),url('image/entreprise.webp');background-size:cover;background-position:center center;background-repeat:no-repeat;padding:18px;border:1px solid rgba(15,23,42,.06);box-shadow:0 24px 40px -28px rgba(15,23,42,.18);min-height:420px;display:block;overflow:hidden;width:100%;max-width:100%}
 .two-panel-bg .two{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .panel{background:rgba(255,255,255,.72);backdrop-filter:blur(1px);border:1px solid rgba(15,23,42,.08);border-radius:22px;padding:30px;display:grid;gap:16px;align-content:start}
 .panel h3{font-size:1.2rem}
@@ -517,6 +528,9 @@ input,select,textarea{font-size:16px}
 }
 @media (max-width:900px){
   header.top .bar{height:64px}
+  header.top .tools{gap:8px}
+  header.top .btn-appointment{min-height:42px;padding:.62rem .82rem;border-radius:11px;font-size:.8rem;letter-spacing:-.01em;gap:7px;white-space:nowrap;box-shadow:0 10px 22px -16px #2563EB}
+  header.top .btn-appointment svg{width:14px;height:14px}
   .menu-btn{display:grid}
   nav.main{position:absolute;top:64px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 30px 50px -30px rgba(14,27,61,.4);flex-direction:column;align-items:stretch;gap:0;padding:6px max(16px,env(safe-area-inset-left,0px)) 18px;display:flex;max-height:0;opacity:0;visibility:hidden;pointer-events:none;overflow:hidden;overscroll-behavior:contain;transform:translateY(-8px);transition:max-height .38s var(--ease),opacity .28s var(--ease),transform .32s var(--ease),visibility .28s linear}
   nav.main.open{max-height:calc(100vh - 64px);max-height:calc(100dvh - 64px);opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
@@ -533,6 +547,7 @@ input,select,textarea{font-size:16px}
   .phead-grid{gap:32px}
 }
 @media (max-width:620px){
+  header.top .btn-appointment{padding-inline:.78rem}
   html{scroll-padding-top:76px}
   section.sec{padding-block:52px}
   .hero{padding-block:36px 52px}
@@ -595,6 +610,9 @@ input,select,textarea{font-size:16px}
   .bigico{width:58px;height:58px;border-radius:17px}
 }
 @media (max-width:380px){
+  .appointment-full{display:none}
+  .appointment-short{display:inline}
+  header.top .btn-appointment{padding-inline:.7rem}
   .wrap{width:calc(100% - 24px)}
   .brand{font-size:1.05rem}
   .brand small{display:none}
@@ -643,6 +661,7 @@ input,select,textarea{font-size:16px}
     </nav>
     <div class="tools">
       <a class="btn btn-primary hide-sm" href="#contact">Demander un devis</a>
+      <a class="btn btn-appointment" href="https://calendly.com/contact-teknova-sarl/30min" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg><span class="appointment-full">Prendre rendez-vous</span><span class="appointment-short">Rendez-vous</span></a>
       <button class="icon-btn menu-btn" id="menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
@@ -668,7 +687,7 @@ input,select,textarea{font-size:16px}
       </div>
       <div class="stack" aria-hidden="true" data-reveal style="--d:.2s">
         <div class="win">
-          <img src="./image/crm.jpg" alt="Aperçu CRM Teknova" />
+          <img src="./image/crm.jpg" width="1200" height="630" fetchpriority="high" decoding="async" alt="Aperçu CRM Teknova" />
         </div>
         <div class="chip c1" style="--c:#D97757"><b></b>Web application</div>
         <div class="chip c2" style="--c:#059669"><b></b>Mobile</div>
@@ -961,8 +980,8 @@ input,select,textarea{font-size:16px}
 <script>
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var ARROW='<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-  var CHECK='<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  var ARROW='<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  var CHECK='<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
   var ICONS={
     site:'<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/>',
     web:'<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>',
@@ -975,7 +994,7 @@ input,select,textarea{font-size:16px}
     db:'<ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
     layers:'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>'
   };
-  function ic(k){return '<svg viewBox="0 0 24 24">'+ICONS[k]+'</svg>'}
+  function ic(k){return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">'+ICONS[k]+'</svg>'}
 
   /* ---------- Données des services ---------- */
   var S=[
@@ -1064,10 +1083,10 @@ input,select,textarea{font-size:16px}
       b+='<g class="sh"><g class="spin"><circle cx="352" cy="64" r="20" fill="none" stroke="var(--c)" stroke-width="10" stroke-dasharray="6 5.2"/></g><circle cx="352" cy="64" r="15" class="a"/><circle cx="352" cy="64" r="6" class="w"/></g>';
     }else if(id==='s-mobile'){
       b='<g class="sh"><rect x="36" y="34" width="344" height="208" rx="18" class="w"/><rect x="52" y="46" width="312" height="184" rx="14" class="gl2"/></g>'+
-        '<image href="image/mobile.png" x="80" y="52" width="280" height="170" preserveAspectRatio="xMidYMid meet"/>' +
+        '<image href="image/mobile.webp" x="80" y="52" width="280" height="170" preserveAspectRatio="xMidYMid meet"/>' +
         '<g class="sh fl"><rect x="270" y="24" width="116" height="40" rx="12" class="w"/><circle cx="290" cy="44" r="10" class="a"/>'+ln(308,37,60,'gl')+ln(308,49,40,'gl')+'</g>'+chip(20,150,68,'Android')+chip(20,182,68,'iOS');
     }else if(id==='s-crm'){
-      b='<image href="image/crm2.png" x="60" y="38" width="280" height="180" preserveAspectRatio="xMidYMid meet"/>';
+      b='<image href="image/crm2.webp" x="60" y="38" width="280" height="180" preserveAspectRatio="xMidYMid meet"/>';
     }else if(id==='s-erp'){
       b=fr(36,34,328,184)+'<rect x="44" y="64" width="30" height="144" rx="8" class="gl2"/>';
       for(i=0;i<4;i++)b+='<rect x="52" y="'+(74+i*26)+'" width="14" height="14" rx="4" class="'+(i===0?'a':'a2')+'"/>';
@@ -1095,11 +1114,11 @@ input,select,textarea{font-size:16px}
   function $(id){return document.getElementById(id)}
   function serviceImage(id){
     return ({
-      's-vitrine':'image/vitrine.png',
-      's-logiciel':'image/image.png',
-      's-mobile':'image/mobile.png',
-      's-crm':'image/crm2.png',
-      's-erp':'image/ERP.png'
+      's-vitrine':'image/vitrine.webp',
+      's-logiciel':'image/image.webp',
+      's-mobile':'image/mobile.webp',
+      's-crm':'image/crm2.webp',
+      's-erp':'image/ERP.webp'
     })[id] || null;
   }
   $('dd').innerHTML=S.map(function(s){return '<a href="#'+s.id+'" style="--c:'+s.c+'"><span class="di tint">'+ic(s.ic)+'</span>'+s.name+'</a>'}).join('');
@@ -1113,12 +1132,12 @@ input,select,textarea{font-size:16px}
 
   $('track').innerHTML=S.map(function(s){
     var image=serviceImage(s.id);
-    return '<a class="card" href="#'+s.id+'" draggable="false" style="--c:'+s.c+'"><div class="art">'+(image?'<img src="'+image+'" alt="Illustration '+s.name+'">':art(s.id))+'</div><div class="cbody"><h3>'+s.title+'</h3><p>'+s.short+'</p><ul class="tags">'+s.tags.map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul><span class="more">En savoir plus '+ARROW+'</span></div></a>';
+    return '<a class="card" href="#'+s.id+'" draggable="false" style="--c:'+s.c+'"><div class="art">'+(image?'<img src="'+image+'" loading="lazy" decoding="async" alt="Illustration '+s.name+'">':art(s.id))+'</div><div class="cbody"><h3>'+s.title+'</h3><p>'+s.short+'</p><ul class="tags">'+s.tags.map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul><span class="more">En savoir plus '+ARROW+'</span></div></a>';
   }).join('');
 
   $('ogrid').innerHTML=S.map(function(s,i){
     var image=serviceImage(s.id);
-    return '<a class="ocard" href="#'+s.id+'" style="--c:'+s.c+';--d:'+((i%2)*.08)+'s" data-reveal="'+(i%2?'right':'left')+'"><div class="art"><div class="art-deco" aria-hidden="true"><span class="deco-ring"></span><span class="deco-orb deco-orb-a"></span><span class="deco-orb deco-orb-b"></span><span class="deco-spark">✦</span></div>'+(image?'<img src="'+image+'" alt="Illustration '+s.name+'">':art(s.id))+'</div><div class="cbody"><h3>'+s.title+'</h3><p>'+s.intro.split('. ')[0]+'.</p><ul>'+s.feats.slice(0,4).map(function(f){return '<li>'+CHECK+'<span>'+f[0]+'</span></li>'}).join('')+'</ul><span class="more">Voir le détail du service '+ARROW+'</span></div></a>';
+    return '<a class="ocard" href="#'+s.id+'" style="--c:'+s.c+';--d:'+((i%2)*.08)+'s" data-reveal="'+(i%2?'right':'left')+'"><div class="art"><div class="art-deco" aria-hidden="true"><span class="deco-ring"></span><span class="deco-orb deco-orb-a"></span><span class="deco-orb deco-orb-b"></span><span class="deco-spark">✦</span></div>'+(image?'<img src="'+image+'" loading="lazy" decoding="async" alt="Illustration '+s.name+'">':art(s.id))+'</div><div class="cbody"><h3>'+s.title+'</h3><p>'+s.intro.split('. ')[0]+'.</p><ul>'+s.feats.slice(0,4).map(function(f){return '<li>'+CHECK+'<span>'+f[0]+'</span></li>'}).join('')+'</ul><span class="more">Voir le détail du service '+ARROW+'</span></div></a>';
   }).join('');
 
   $('svc-pages').innerHTML=S.map(function(s,i){
@@ -1127,7 +1146,7 @@ input,select,textarea{font-size:16px}
     '<div class="phead"><div class="blob b1" style="left:-140px;top:-170px;background:'+s.c+'"></div><div class="blob b2" style="right:-120px;top:-60px;background:'+s.c+';opacity:.22"></div><div class="wrap">'+
       '<div class="phead-grid"><div data-reveal="left"><div class="bigico">'+ic(s.ic)+'</div><h1>'+s.title+'</h1><p class="lead" style="font-weight:600;color:var(--fg);margin-bottom:12px">'+s.tag+'</p><p class="lead">'+s.intro+'</p>'+
       '<div class="cta-row"><a class="btn btn-c" href="#contact" data-svc="'+s.name+'">Demander un devis '+ARROW+'</a><a class="btn btn-ghost" href="#services">Tous les services</a></div></div>'+
-      '<div class="art big'+((s.id === 's-vitrine' || s.id === 's-erp' || s.id === 's-logiciel' || s.id === 's-mobile' || s.id === 's-crm') ? ' person-art' : '')+'" data-reveal="right">'+((s.id === 's-vitrine' || s.id === 's-erp' || s.id === 's-logiciel' || s.id === 's-mobile' || s.id === 's-crm') ? '<div class="person-orbit" aria-hidden="true"><span class="orbit orbit-a"></span><span class="orbit orbit-b"></span><span class="icon-bubble bubble-a">'+ic('web')+'</span><span class="icon-bubble bubble-b">'+ic('app')+'</span><span class="icon-bubble bubble-c">'+ic('mobile')+'</span><span class="icon-bubble bubble-d">'+ic('ai')+'</span><span class="icon-bubble bubble-e"><span class="ux-label">UI/UX</span></span></div><img src="'+(s.id === 's-vitrine' ? 'image/vitrine.png' : s.id === 's-erp' ? 'image/ERP.png' : s.id === 's-mobile' ? 'image/mobile.png' : s.id === 's-crm' ? 'image/crm2.png' : 'image/image.png')+'" alt="Aperçu '+s.name+'">' : art(s.id))+'</div></div>'+'<div class="gains">'+s.gains.map(function(g,k){return '<div class="gain" data-reveal style="--d:'+(k*.08)+'s">'+CHECK+'<span>'+g+'</span></div>'}).join('')+'</div>'+
+      '<div class="art big'+((s.id === 's-vitrine' || s.id === 's-erp' || s.id === 's-logiciel' || s.id === 's-mobile' || s.id === 's-crm') ? ' person-art' : '')+'" data-reveal="right">'+((s.id === 's-vitrine' || s.id === 's-erp' || s.id === 's-logiciel' || s.id === 's-mobile' || s.id === 's-crm') ? '<div class="person-orbit" aria-hidden="true"><span class="orbit orbit-a"></span><span class="orbit orbit-b"></span><span class="icon-bubble bubble-a">'+ic('web')+'</span><span class="icon-bubble bubble-b">'+ic('app')+'</span><span class="icon-bubble bubble-c">'+ic('mobile')+'</span><span class="icon-bubble bubble-d">'+ic('ai')+'</span><span class="icon-bubble bubble-e"><span class="ux-label">UI/UX</span></span></div><img src="'+(s.id === 's-vitrine' ? 'image/vitrine.webp' : s.id === 's-erp' ? 'image/ERP.webp' : s.id === 's-mobile' ? 'image/mobile.webp' : s.id === 's-crm' ? 'image/crm2.webp' : 'image/image.webp')+'" loading="lazy" decoding="async" alt="Aperçu '+s.name+'">' : art(s.id))+'</div></div>'+'<div class="gains">'+s.gains.map(function(g,k){return '<div class="gain" data-reveal style="--d:'+(k*.08)+'s">'+CHECK+'<span>'+g+'</span></div>'}).join('')+'</div>'+
     '</div></div>'+
     '<section class="sec"><div class="wrap"><div class="sec-head" data-reveal><span class="eyebrow">Ce que nous réalisons</span><h2>Le contenu de ce service, en détail.</h2></div><div class="fgrid">'+
       s.feats.map(function(f,k){return '<div class="feat" data-reveal style="--d:'+((k%3)*.08)+'s"><i></i><h3>'+f[0]+'</h3><p>'+f[1]+'</p></div>'}).join('')+'</div></div></section>'+
@@ -1377,10 +1396,10 @@ input,select,textarea{font-size:16px}
   showEl.addEventListener('mouseleave',function(){showEl.classList.remove('paused');if(!reduce&&current==='innovation')sgo(cur)});
   function onPage(id){
     clearTimeout(timer);
-    if(id==='accueil'){startNet();requestAnimationFrame(upd)}else stopNet();
+    if(id==='accueil'){if(window.innerWidth<=900)stopNet();else{startNet();requestAnimationFrame(upd)}}else stopNet();
     if(id==='innovation'&&!reduce)sgo(cur);
   }
-  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(current==='accueil'){size();if(reduce)draw();upd()}},150)});
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(current==='accueil'){if(window.innerWidth<=900)stopNet();else if(!netOn)startNet();if(reduce&&netOn)draw();upd()}},150)});
 
   /* ---------- Routeur ---------- */
   var pages={};[].slice.call(document.querySelectorAll('.page')).forEach(function(p){pages[p.getAttribute('data-route')]=p});
